@@ -1,100 +1,72 @@
 ---
 title: "Phase 5: Post-PR"
-description: "Handle review feedback and make follow-up changes"
+sidebarTitle: "Post-PR"
+description: "Track PR status and start new features"
 ---
 
-After the PR is created, use p0 to address review comments and make follow-up changes. The session remains active, allowing you to iterate on the implementation until the PR is approved.
-
-## Handling review feedback
-
-When you receive review comments:
-
-1. Paste the comments into p0
-2. p0 analyzes the feedback and suggests fixes
-3. Review the suggested changes
-4. Approve or modify the approach
-5. p0 implements the changes
-
-p0 understands common review patterns:
-
-- Code style and convention requests
-- Performance improvements
-- Security concerns
-- Test coverage gaps
-- Documentation updates
+The final phase is a success screen showing your created pull requests with real-time status tracking.
 
 <Frame>
-  <img src="/images/screenshots/post-pr-feedback.png" alt="Handling PR review feedback" />
+  <img src="/images/screenshots/post-pr-phase.png" alt="Phase 5 success screen with PR list" />
 </Frame>
 
-{/* TODO: Screenshot - capture addressing review comments with p0 showing suggested fixes */}
+{/* TODO: Screenshot - capture the Phase 5 success screen showing the celebration header, PR list with status badges, and the "Start New Session" button */}
 
-## Follow-up changes
+## PR tracking
 
-You can make additional changes in the same session:
+Each pull request is displayed with:
 
-- Add missing tests
-- Improve error handling
-- Refactor based on feedback
-- Update documentation
-- Fix edge cases
+- **Repository name** — which repo the PR belongs to
+- **PR number** — the GitHub PR number
+- **Status badge** — current state of the PR:
+  - **Open** — PR is open and awaiting review
+  - **Merged** — PR has been merged
+  - **Closed** — PR was closed without merging
 
-Each iteration pushes new commits to the same PR branch.
+### Actions per PR
 
-<Tip>
-  Use `/pr-comments` to generate structured review comments for your own PRs when reviewing others' code.
-</Tip>
+| Action | Description |
+|---|---|
+| **View PR** | Opens the pull request in your browser on GitHub |
+| **Check Status** | Polls GitHub for the current PR state and updates the badge |
+| **Retry** | Re-creates the PR if the original creation failed |
 
-## Closing the loop
+## Failed PRs
 
-Once the PR is approved and merged:
+If a PR fails to create (e.g., due to network issues or authentication errors), the error message is displayed with a retry button. You can retry individual failed PRs without affecting successful ones.
 
-1. The feature is complete
-2. The session's worktree can be cleaned up
-3. Documentation is preserved in the feature folder
+## Starting a new feature
 
-The feature folder remains as a permanent record:
+Click **Start New Session** to create a fresh session and return to Phase 1. Your completed feature's documentation remains in the feature folder for reference:
 
 ```
 purple/documentation/{YYMMDD}-{slug}/
-  ├── product-spec.md
-  ├── tech-spec.md
-  ├── implementation-log.md
-  ├── progress.json
-  └── pr-link.txt
+├── product-spec.md
+├── technical-spec.md
+├── progress.json
+├── manual-setup.md
+├── agent-written-specifications/
+├── completed-tickets-documentation/
+└── qa-screenshots/
 ```
 
-## Starting a new task
+## Alternative workflows
 
-After completing a feature, you can:
+After completing a spec-driven workflow, you can also:
 
+- Use `/refine` for incremental changes to the same feature
+- Switch to regular chat mode for exploratory work
 - Start a new spec-driven workflow with `/build-from-spec`
-- Use `/refine` for incremental changes to existing features
-- Switch to chat mode for exploratory work
 
 <Note>
-  The spec-driven workflow is designed for substantial features. For small tweaks and bug fixes, regular chat mode may be more efficient.
+  The spec-driven workflow is designed for substantial features. For small tweaks and bug fixes after the PR is created, regular chat mode (Agent or Plan mode) may be more efficient.
 </Note>
-
-## Best practices
-
-To get the most out of the post-PR phase:
-
-- Address feedback promptly while context is fresh
-- Group related review comments for batch fixes
-- Test thoroughly after each iteration
-- Keep PR scope focused; create new PRs for scope expansion
-- Document any decisions made during review
-
-## Workflow complete
-
-Congratulations! You've completed the full spec-driven workflow. The feature has gone from idea to merged PR with full documentation at every step.
 
 <CardGroup cols={2}>
   <Card title="Start a new feature" icon="plus" href="/workflow/overview">
     Begin another spec-driven workflow
   </Card>
   <Card title="Explore tools" icon="wrench" href="/tools/overview">
-    Learn about p0's capabilities
+    Learn about p0's tool capabilities
   </Card>
 </CardGroup>

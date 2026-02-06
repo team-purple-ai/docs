@@ -1,87 +1,77 @@
 ---
-title: "Phase 2: Tech spec"
-description: "Plan the architecture, file changes, and dependencies before writing code"
+title: "Phase 2: Refine"
+sidebarTitle: "Refine"
+description: "Polish your specs with AI assistance in a split-screen editor"
 ---
 
-The tech spec translates product requirements into an engineering plan. It breaks down the feature into concrete file changes, identifies dependencies, and outlines the implementation approach.
+The refine phase gives you a dedicated environment to improve your specs before implementation begins. Work in a split-screen layout with your spec editor on the left and an AI chat on the right.
 
-## What's in a tech spec
-
-A comprehensive tech spec includes:
-
-### Architecture decisions
-
-- Component structure and relationships
-- Data flow and state management
-- API design and integration points
-- Database schema changes
-
-### File-by-file change plan
-
-A detailed breakdown of which files need to be created, modified, or deleted, including:
-
-- New files to create
-- Existing files to modify
-- Functions and components to add or change
-- Tests to write
-
-### Dependencies
-
-- New packages to install
-- Version requirements
-- Potential conflicts
-
-### Risk assessment
-
-- Technical challenges
-- Areas requiring careful review
-- Performance considerations
-- Security implications
+## Layout
 
 <Frame>
-  <img src="/images/screenshots/tech-spec-review.png" alt="Tech spec review interface" />
+  <img src="/images/screenshots/refine-phase.png" alt="Phase 2 refine interface with split-screen editor and chat" />
 </Frame>
 
-{/* TODO: Screenshot - capture a tech spec with file-by-file breakdown and architecture notes */}
+{/* TODO: Screenshot - capture the Phase 2 interface showing the spec editor on the left with tabs and the AI chat on the right, with the readiness meter visible */}
 
-## Generating the tech spec
+The refine phase uses a resizable split-screen layout:
 
-Use `/engineer-tasks` to generate a tech spec from your product spec, or let the full pipeline generate it automatically.
+- **Left panel (70%)** — spec editor with tabs for Product Spec, Technical Spec, and Attachments
+- **Right panel (30%)** — AI chat for refining your specs collaboratively
+- **Resizable divider** — drag to adjust the split between editor and chat
 
-p0 analyzes your codebase to:
+## Spec editor
 
-- Identify existing patterns to follow
-- Find similar implementations for reference
-- Detect potential conflicts
-- Suggest appropriate file locations
+The editor supports three tabs:
 
-## Reviewing and editing
+### Product spec tab
 
-The tech spec is your last checkpoint before code changes begin. Review it carefully to ensure:
+Edit your product requirements directly. The editor supports Markdown formatting and auto-saves to `{featurePath}/product-spec.md` as you type.
 
-- The approach aligns with your codebase conventions
-- All requirements from the product spec are addressed
-- Dependencies are appropriate
-- The scope is manageable
+### Technical spec tab (optional)
 
-You can request changes, add details, or approve to proceed to implementation.
+Add implementation details like architecture decisions, API design, database changes, and component structure. Saved to `{featurePath}/technical-spec.md`.
 
-<Note>
-  The tech spec is your last checkpoint before code changes begin. Take time to review the implementation plan carefully.
-</Note>
+### Attachments tab
 
-## Implementation approach
+Manage uploaded images and visual references. You can:
 
-The tech spec can outline different implementation strategies:
+- View all attached images
+- Add new images via paste or drag-and-drop
+- Insert image references into your specs
 
-- **Sequential**: One file at a time, in dependency order
-- **Parallel**: Multiple files simultaneously (via `/orchestrate`)
-- **Incremental**: Build in testable stages
+## Readiness meter
 
-## Next steps
+A visual indicator shows how comprehensive your product spec is:
 
-Once the tech spec is approved, p0 moves to Phase 3: Implementation.
+| Color | Character count | Meaning |
+|---|---|---|
+| Red | Under 100 | Needs more detail |
+| Orange | 100–499 | Getting started |
+| Yellow | 500–1,499 | Decent coverage |
+| Green | 1,500+ | Comprehensive |
 
-<Card title="Phase 3: Implementation" icon="arrow-right" href="/workflow/implementation">
-  Watch AI write the code
+The meter updates in real-time as you edit. A more detailed spec leads to better implementation results.
+
+## AI refinement
+
+Use the chat panel to refine your specs collaboratively:
+
+- Ask the AI to expand on specific sections
+- Request user stories or acceptance criteria
+- Get feedback on completeness and clarity
+- Have the AI rewrite sections based on your direction
+
+The AI can update your product spec content directly based on the conversation.
+
+<Tip>
+  The more detail you provide in your specs, the better the implementation will be. Take time to think through edge cases, acceptance criteria, and technical constraints before moving to Phase 3.
+</Tip>
+
+## Moving to Phase 3
+
+When you're satisfied with your specs, click the **Go!** button (bottom right) to save your specs and start implementation. Both the product spec and technical spec are written to disk before Phase 3 begins.
+
+<Card title="Phase 3: Watch" icon="arrow-right" href="/workflow/implementation">
+  Monitor AI implementation in real-time
 </Card>

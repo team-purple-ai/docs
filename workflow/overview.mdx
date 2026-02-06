@@ -8,20 +8,20 @@ p0's spec-driven workflow guides you from product requirements through implement
 ## The five phases
 
 <Steps>
-  <Step title="Product spec">
-    Define what to build with user stories, requirements, and acceptance criteria
+  <Step title="Import">
+    Upload your product spec (required), optional tech spec, and visual references
   </Step>
-  <Step title="Tech spec">
-    Plan how to build it with architecture decisions, file changes, and dependencies
+  <Step title="Refine">
+    Polish your specs with AI assistance in a split-screen editor and chat interface
   </Step>
-  <Step title="Implementation">
-    AI writes the code with real-time monitoring and full visibility into every change
+  <Step title="Watch">
+    AI implements the spec automatically while you monitor progress with a live ticket tree
   </Step>
-  <Step title="Pull request">
-    Review diffs, write PR description, and push your changes
+  <Step title="Review">
+    Review the implementation and complete any manual setup steps before creating PRs
   </Step>
   <Step title="Post-PR">
-    Handle review feedback and follow-up changes
+    Track PR status, retry failed PRs, and start new features
   </Step>
 </Steps>
 
@@ -29,52 +29,62 @@ p0's spec-driven workflow guides you from product requirements through implement
   <img src="/images/screenshots/workflow-overview.png" alt="Spec-driven workflow phases" />
 </Frame>
 
-{/* TODO: Screenshot - capture the workflow overview showing all five phases with status indicators */}
+{/* TODO: Screenshot - capture the phase breadcrumb at the top of the spec-driven UI showing all five phases with the current phase highlighted */}
 
 ## Getting started
 
-Use the `/build-from-spec` command to run the full pipeline from start to finish. p0 will guide you through each phase, pausing for your review and approval at key checkpoints.
+To start a spec-driven workflow, create a new session in your workspace. You'll see the import screen where you can upload your product spec or start from scratch with AI brainstorming.
 
-You can also enter individual phases using commands like `/import-spec` or `/engineer-tasks` if you want to start at a specific stage.
+You can also use these slash commands to enter the workflow at any point:
+
+| Command | Description |
+|---|---|
+| `/build-from-spec` | Run the full pipeline from spec to implementation to QA |
+| `/import-spec` | Import and validate a product spec |
+| `/engineer-tasks` | Generate an engineering plan from a product spec |
+| `/orchestrate` | Run parallel implementation of an engineering spec |
 
 ## Feature folders
 
-All specs and documentation are organized in feature folders:
+All specs and documentation are organized in feature folders within your workspace:
 
 ```
 purple/documentation/{YYMMDD}-{slug}/
-  ├── product-spec.md
-  ├── tech-spec.md
-  ├── implementation-log.md
-  └── progress.json
+├── product-spec.md                        # Your product requirements
+├── technical-spec.md                      # Technical implementation plan
+├── progress.json                          # Ticket tracking and phase status
+├── manual-setup.md                        # Manual steps (generated in Phase 4)
+├── agent-written-specifications/          # AI-generated tech specs
+├── completed-tickets-documentation/       # Docs for completed tickets
+└── qa-screenshots/                        # QA test evidence
 ```
 
-Original specs are also stored in `purple/documentation/user-originals/` for reference.
+The folder slug uses the format `YYMMDD-feature-name` (e.g., `260206-user-auth-flow`).
 
 ## Skipping phases
 
-If you already have a product spec or tech spec written, you can jump directly to any phase. p0 will detect existing specs and use them to inform the implementation.
+The workflow is flexible. If you already have specs written, you can import them and jump ahead. p0 detects existing content and adjusts accordingly. You can also pause at any phase, make manual changes, and resume where you left off.
 
 <Note>
-  The spec-driven workflow is designed to be flexible. You can pause at any phase, make manual changes, and resume where you left off.
+  The spec-driven workflow is designed for substantial features. For small tweaks and bug fixes, regular chat mode (Agent or Plan mode) may be more efficient.
 </Note>
 
 ## Explore each phase
 
 <CardGroup cols={2}>
-  <Card title="Phase 1: Product spec" icon="file-lines" href="/workflow/product-spec">
-    Define requirements and acceptance criteria
+  <Card title="Phase 1: Import" icon="file-import" href="/workflow/product-spec">
+    Upload specs and visual references
   </Card>
-  <Card title="Phase 2: Tech spec" icon="code" href="/workflow/tech-spec">
-    Plan architecture and file changes
+  <Card title="Phase 2: Refine" icon="pen-to-square" href="/workflow/tech-spec">
+    Polish specs with AI assistance
   </Card>
-  <Card title="Phase 3: Implementation" icon="gear" href="/workflow/implementation">
-    Watch AI write code in real-time
+  <Card title="Phase 3: Watch" icon="eye" href="/workflow/implementation">
+    Monitor AI implementation in real-time
   </Card>
-  <Card title="Phase 4: Pull request" icon="code-pull-request" href="/workflow/pull-request">
-    Review changes and create PR
+  <Card title="Phase 4: Review" icon="check-double" href="/workflow/pull-request">
+    Review changes and create PRs
   </Card>
-  <Card title="Phase 5: Post-PR" icon="comment" href="/workflow/post-pr">
-    Handle feedback and follow-up
+  <Card title="Phase 5: Post-PR" icon="flag-checkered" href="/workflow/post-pr">
+    Track PRs and wrap up
   </Card>
 </CardGroup>

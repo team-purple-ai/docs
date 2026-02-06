@@ -13,14 +13,16 @@ Get p0 running on your development machine in minutes. The desktop app is availa
   <Tab title="macOS">
     ### Download for macOS
 
-    p0 supports both Apple Silicon (M1/M2/M3) and Intel-based Macs running macOS 11.0 or later.
+    p0 supports both Apple Silicon (M1/M2/M3/M4) and Intel-based Macs running macOS 12.0 (Monterey) or later.
 
-    1. Download the DMG installer from [bepurple.ai](https://bepurple.ai)
+    1. Download the `.dmg` installer from [bepurple.ai](https://bepurple.ai)
     2. Open the downloaded `.dmg` file
-    3. Drag the p0 app to your Applications folder
+    3. Drag the p0 icon into your Applications folder
     4. Launch p0 from Applications or Spotlight
 
-    **First launch**: macOS may show a security prompt. Go to System Preferences > Security & Privacy and click "Open Anyway" to allow p0 to run.
+    <Note>
+      On first launch, macOS may show a security prompt since p0 is downloaded from the web. Click **Open** in the dialog, or go to **System Settings > Privacy & Security** and click **Open Anyway**.
+    </Note>
   </Tab>
 
   <Tab title="Windows">
@@ -68,16 +70,16 @@ When you open p0 for the first time, you'll be prompted to sign in with your Pur
 {/* TODO: Screenshot - capture the login screen showing email/password fields */}
 
 <Steps>
-  <Step title="Enter your credentials">
-    Sign in with your Purple account email and password
+  <Step title="Sign in or create an account">
+    Enter your email and password to sign in. If you're new to Purple, switch to the **Create Account** tab to register with your email, password, and name.
   </Step>
 
-  <Step title="Grant permissions">
-    p0 will request access to your file system for repository management
+  <Step title="Connect to Claude">
+    p0 securely authenticates with Anthropic's Claude API. Your credentials are encrypted using your operating system's keychain (macOS Keychain, Windows DPAPI, or Linux Secret Service).
   </Step>
 
-  <Step title="You're ready">
-    Start creating workspaces and coding with AI assistance
+  <Step title="You're in">
+    After signing in, you'll land on the workspace picker where you can create your first workspace or clone one from your team.
   </Step>
 </Steps>
 
@@ -87,15 +89,9 @@ When you open p0 for the first time, you'll be prompted to sign in with your Pur
 
 ## Auto-updates
 
-p0 automatically checks for updates in the background and installs them when you restart the app. You'll see a notification when a new version is available.
+p0 checks for updates automatically in the background. When a new version is available, you'll see a notification with the release notes. Updates are downloaded in the background and installed the next time you quit and reopen the app.
 
-Updates include:
-- New features and improvements
-- Bug fixes and performance enhancements
-- Updated Claude models
-- Security patches
-
-You can check your current version in Settings > About.
+You don't need to do anything to stay up to date — just restart p0 when prompted.
 
 ## Next steps
 

@@ -16,10 +16,11 @@ Manage your Purple account and profile:
 
 ## Model
 
-Select which Claude model to use for AI coding:
+Select which Claude model to use for AI coding. Switch models with the `/model` command or in Settings:
 
-- **Opus 4.5**: Most capable model, best for complex tasks
-- **Sonnet 4.5**: Balanced performance and speed (default)
+- **Claude Sonnet** — fast, efficient performance for most coding tasks (default)
+- **Claude Opus** — maximum capability for complex reasoning and planning
+- **Claude Haiku** — lightweight model for quick tasks
 
 ## Appearance
 
@@ -51,9 +52,18 @@ See [Plugins](/features/plugins) for more details.
 
 View connected Model Context Protocol servers, their status, and available tools. MCP servers provide additional capabilities to Claude through standardized tooling.
 
-## Custom Agents (Beta)
+## Skills
 
-View and manage custom sub-agents. Custom agents are loaded from `~/.claude/agents/` and `.claude/agents/` directories.
+View user and project skills. Skills provide specialized knowledge and workflows:
+
+- **User skills** — stored at `~/.claude/skills/`
+- **Project skills** — stored at `.claude/skills/` in your workspace
+
+Each skill is expandable to view its content. Click **Open in Finder** to navigate to the skill file.
+
+## Custom Agents
+
+View and manage custom sub-agent definitions. Custom agents are loaded from `~/.claude/agents/` and `.claude/agents/` directories.
 
 <Frame>
   <img src="/images/screenshots/settings.png" alt="Settings dialog" />

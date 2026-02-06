@@ -1,88 +1,86 @@
 ---
-title: "Phase 3: Implementation"
-description: "Watch the AI write code in real-time with full visibility into every change"
+title: "Phase 3: Watch"
+sidebarTitle: "Watch"
+description: "Monitor AI implementation in real-time with a live ticket tree"
 ---
 
-p0 executes the tech spec, making file edits, running commands, and testing as it goes. You have full visibility into every action, with the ability to intervene at any time.
+In the watch phase, the AI implements your spec while you monitor progress. You get a real-time view of every action taken, organized by tickets in a progress tree.
 
-## Real-time monitoring
-
-Watch tool execution as it happens:
-
-- **Bash commands**: See commands run, view output, check exit codes
-- **File edits**: View exact changes with before/after diffs
-- **Test runs**: Monitor test execution and results
-- **Grep/search operations**: See what p0 is looking for and finding
-
-Each tool call shows:
-
-- Input parameters
-- Execution status
-- Output or results
-- Duration
+## Layout
 
 <Frame>
-  <img src="/images/screenshots/implementation-progress.png" alt="Implementation in progress with tool execution visible" />
+  <img src="/images/screenshots/watch-phase.png" alt="Phase 3 watch mode with stream and ticket tree" />
 </Frame>
 
-{/* TODO: Screenshot - capture the implementation phase with multiple tool calls visible, showing Edit and Bash tools in action */}
+{/* TODO: Screenshot - capture the Phase 3 interface showing the streaming implementation on the left and the ticket tree on the right with some completed and in-progress tickets */}
+
+The watch phase uses a resizable split-screen layout:
+
+- **Left panel (65%)** — real-time streaming output showing the AI's work
+- **Right panel (35%)** — ticket tree showing implementation progress
+
+## Streaming output
+
+The left panel shows everything the AI is doing in real-time:
+
+- **Bash commands** — see commands run with full output and exit codes
+- **File edits** — view exact changes with syntax-highlighted diffs
+- **File creation** — new files being written
+- **Search operations** — what the AI is looking for and finding
+- **Reasoning** — the AI's thought process between actions
+
+The stream uses the same rendering as the regular chat interface, so you get full tool visualization with expandable output.
+
+## Ticket tree
+
+The right panel tracks implementation progress organized into phases and tickets:
+
+- **Phases** — high-level implementation stages (collapsible)
+- **Tickets** — individual tasks within each phase
+- **Status indicators**:
+  - Green checkmark — completed
+  - Yellow spinner — in progress
+  - Red X — failed (with error description)
+- **Progress badge** — shows completed/total tickets per phase (e.g., "3/5")
+
+The ticket tree reads from the `progress.json` file in your feature folder, which the AI updates as it works.
+
+## Intervening
+
+You can pause and redirect the AI at any time:
+
+1. Click **Stop** to pause execution
+2. A blue banner appears: "Claude finished. Send a message to continue..."
+3. Type feedback, corrections, or new instructions
+4. The AI resumes with your input taken into account
+
+This is useful when you spot an issue early or want to adjust the approach mid-implementation.
 
 ## Parallel execution
 
-For features with multiple independent files, use `/orchestrate` to run parallel implementation. p0 will:
+For features with independent work streams, the `/orchestrate` command enables parallel implementation:
 
-- Identify independent work streams
-- Execute file changes concurrently
-- Coordinate dependencies
-- Merge results safely
+- Multiple files and components built concurrently
+- Dependencies coordinated automatically
+- Results merged safely
 
-This dramatically speeds up implementation for larger features.
-
-## Intervention
-
-You can pause, redirect, or ask questions at any point during implementation:
-
-- Stop execution to review changes
-- Ask why p0 made a specific choice
-- Request a different approach
-- Point out errors before they propagate
+This significantly speeds up implementation for larger features.
 
 <Tip>
-  Use the session diff viewer to monitor cumulative changes as implementation progresses.
+  You don't need to watch the entire implementation. p0 will automatically transition to Phase 4 when the implementation is complete.
 </Tip>
 
-## Tool execution
+## Automatic transition
 
-p0 uses a variety of tools during implementation:
+Phase 3 transitions to Phase 4 automatically when the AI signals completion. The transition is triggered by either:
 
-- **Edit**: Make precise changes to existing files
-- **Write**: Create new files
-- **Bash**: Run commands, tests, and scripts
-- **Read**: View file contents
-- **Grep**: Search for patterns across files
-- **Glob**: Find files by pattern
+- The AI signaling build completion
+- A `manual-setup.md` file appearing in the feature folder
 
-<Card title="Learn more about tools" icon="wrench" href="/tools/overview">
-  Explore all available tools and their capabilities
-</Card>
+If automatic detection doesn't trigger, a **Mark Complete** button on the ticket tree lets you manually advance.
 
-## Testing and verification
+## Moving to Phase 4
 
-Throughout implementation, p0:
-
-- Runs tests after changes
-- Checks for syntax errors
-- Verifies imports and dependencies
-- Ensures code follows project conventions
-
-<Warning>
-  Review the session diff carefully before moving to the PR phase. This is your chance to catch issues before they enter version control.
-</Warning>
-
-## Next steps
-
-When implementation is complete, move to Phase 4 to review changes and create a pull request.
-
-<Card title="Phase 4: Pull request" icon="arrow-right" href="/workflow/pull-request">
-  Review changes and create PR
+<Card title="Phase 4: Review" icon="arrow-right" href="/workflow/pull-request">
+  Review changes and create PRs
 </Card>

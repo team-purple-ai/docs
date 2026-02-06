@@ -9,9 +9,9 @@ Sub-chats let you run multiple parallel conversations within the same p0 session
 
 To create a new sub-chat within your current session:
 
-1. Click the "New Sub-chat" button in the session interface
-2. A new conversation thread opens in a separate tab
-3. Start chatting with p0 in the new thread
+- Type `/clear` in the chat to start a fresh conversation thread
+- The new sub-chat opens as a tab alongside your existing threads
+- Start chatting with p0 in the new thread
 
 All sub-chats within a session share the same git worktree but maintain independent conversation histories.
 
@@ -54,3 +54,23 @@ Sub-chats are useful for:
 <Tip>
 Use sub-chats to keep your main conversation focused while exploring side questions or alternative approaches. You can always merge insights back into your primary thread.
 </Tip>
+
+## Keyboard shortcuts
+
+Navigate between sub-chats quickly:
+
+| Shortcut | Action |
+|---|---|
+| `Ctrl+Tab` | Switch to next sub-chat tab |
+| `Opt+Ctrl+Tab` | Switch to previous sub-chat tab |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Plan mode" icon="magnifying-glass" href="/sessions/plan-mode">
+    Read-only analysis and planning
+  </Card>
+  <Card title="Agent mode" icon="robot" href="/sessions/agent-mode">
+    Full execution and tool access
+  </Card>
+</CardGroup>

@@ -5,36 +5,47 @@ description: "Complete list of keyboard shortcuts in p0"
 
 All keyboard shortcuts available in p0. macOS uses `Cmd`, Windows and Linux use `Ctrl`.
 
-## General
+## Global
+
+These shortcuts work from anywhere in p0, including when input fields are focused.
 
 | Action | macOS | Windows/Linux |
 |--------|-------|---------------|
+| Show shortcuts dialog | `?` | `?` |
 | New session | `Cmd+N` | `Ctrl+N` |
-| Settings | `Cmd+,` | `Ctrl+,` |
-| Command palette | `Cmd+Shift+P` | `Ctrl+Shift+P` |
+| Open settings | `Cmd+,` | `Ctrl+,` |
 | Toggle sidebar | `Cmd+\` | `Ctrl+\` |
-| Focus chat input | `Cmd+L` | `Ctrl+L` |
-| Send message | `Cmd+Enter` | `Ctrl+Enter` |
-| Close dialog / Cancel | `Escape` | `Escape` |
 
-## Tabs
+## Sessions and navigation
 
 | Action | macOS | Windows/Linux |
 |--------|-------|---------------|
-| New tab | `Cmd+T` | `Ctrl+T` |
-| Close tab | `Cmd+W` | `Ctrl+W` |
-| Switch to tab 1-9 | `Cmd+1` through `Cmd+9` | `Ctrl+1` through `Ctrl+9` |
-| Previous tab | `Cmd+Shift+[` | `Ctrl+Shift+[` |
-| Next tab | `Cmd+Shift+]` | `Ctrl+Shift+]` |
-| Quick switch | `Ctrl+Tab` | `Ctrl+Tab` |
+| Create new agent | `Cmd+T` | `Ctrl+T` |
+| Archive current agent | `Cmd+W` | `Ctrl+W` |
+| Search sessions | `/` | `/` |
+| Previous agent | `Cmd+[` | `Ctrl+[` |
+| Next agent | `Cmd+]` | `Ctrl+]` |
+| Quick switch agents | `Ctrl+Tab` | `Ctrl+Tab` |
+| Quick switch (reverse) | `Opt+Ctrl+Tab` | `Alt+Ctrl+Tab` |
 
 ## Chat
 
 | Action | macOS | Windows/Linux |
 |--------|-------|---------------|
-| Clear / new sub-chat | `Cmd+K` | `Ctrl+K` |
-| Compact context | `Cmd+Shift+K` | `Ctrl+Shift+K` |
+| Switch model | `Cmd+/` | `Ctrl+/` |
+| Stop generation | `Esc` or `Ctrl+C` | `Esc` or `Ctrl+C` |
+
+## Terminal
+
+| Action | macOS | Windows/Linux |
+|--------|-------|---------------|
+| Search terminal | `Cmd+F` | `Ctrl+F` |
+| Line continuation | `Shift+Enter` | `Shift+Enter` |
 
 <Tip>
-You can customize the `Ctrl+Tab` behavior in Settings > Preferences to switch between workspaces or agents.
+Press `?` from anywhere in p0 to open the keyboard shortcuts dialog for a quick visual reference.
 </Tip>
+
+<Note>
+The `Ctrl+Tab` behavior is configurable in **Settings > Preferences**. You can choose whether it switches between workspaces or agents.
+</Note>

@@ -1,64 +1,58 @@
 ---
-title: "Phase 1: Product spec"
-description: "Define what to build with user stories and acceptance criteria"
+title: "Phase 1: Import"
+sidebarTitle: "Import"
+description: "Upload your product spec, technical spec, and visual references"
 ---
 
-The product spec captures requirements in a structured format that guides all subsequent phases. A well-written product spec ensures everyone understands what needs to be built before any code is written.
+The import phase is your starting point. Upload the product spec that defines what you're building, along with optional technical details and visual references.
 
-## Creating a product spec
+## Import panel
 
-You have two options for creating a product spec:
-
-### Import an existing spec
-
-Use `/import-spec` to import a spec you've already written. p0 supports various formats and will help you structure it into the standard template.
-
-### Generate a new spec
-
-Describe your feature to p0 in natural language, and it will generate a structured product spec for you. You can iterate on this together until it captures your requirements accurately.
-
-### Spec template
-
-Every product spec follows this structure:
-
-- **Overview**: High-level description of the feature
-- **User Stories**: Who needs this and why
-- **Requirements**: Functional and non-functional requirements
-- **Acceptance Criteria**: Clear, testable conditions for completion
-- **Technical Notes**: Any constraints, dependencies, or considerations
+When you start a spec-driven session, you'll see the import panel with three zones:
 
 <Frame>
-  <img src="/images/screenshots/product-spec-editor.png" alt="Product spec editor interface" />
+  <img src="/images/screenshots/import-panel.png" alt="Import panel with three upload zones" />
 </Frame>
 
-{/* TODO: Screenshot - capture SpecFilePicker component with a sample product spec being reviewed */}
+{/* TODO: Screenshot - capture the Phase 1 import panel showing the three drag-and-drop zones for product spec, tech spec, and visual references */}
 
-## Reviewing the spec
+### Product spec (required)
 
-p0 presents the spec for your review in a readable format. You can:
+The product spec defines what you're building. You can:
 
-- Edit sections directly
-- Ask for more detail in specific areas
-- Add edge cases or constraints
-- Approve and move to the next phase
+- **Drag and drop** a `.md`, `.txt`, or `.markdown` file onto the upload zone
+- **Browse files** from your workspace's `user-originals` folder
+- **Brainstorm with AI** to start from scratch and generate a spec interactively
+
+### Technical spec (optional)
+
+If you already have implementation details planned out, upload a technical spec to give the AI more context about how to build the feature.
+
+### Visual references (optional)
+
+Upload images to provide visual context:
+
+- Drag and drop image files onto the references zone
+- Use a file picker to browse for images
+- Paste images directly with `Cmd+V` (Mac) or `Ctrl+V` (Windows/Linux)
+
+Visual references help the AI understand UI layouts, design mockups, or error screenshots.
+
+## Work mode selection
+
+Before proceeding, choose your work mode:
+
+- **Worktree** (recommended) — creates an isolated git worktree so changes don't affect your main branch
+- **Local** — works directly in your project directory
 
 <Tip>
-  The more detail you provide in the product spec, the better the implementation will be. Take time to think through edge cases and acceptance criteria.
+  Worktree mode is the default and recommended for safety. Your main branch stays clean while the AI works on a separate branch.
 </Tip>
 
-## Spec storage
+## Moving to Phase 2
 
-Once approved, the product spec is saved to:
+Once you've uploaded at least a product spec, click **Continue to refine** to move to Phase 2 where you can polish your specs with AI assistance.
 
-- `purple/documentation/user-originals/` (permanent storage)
-- `purple/documentation/{YYMMDD}-{slug}/product-spec.md` (feature folder)
-
-The feature folder becomes the central hub for all documentation related to this feature.
-
-## Next steps
-
-After the product spec is approved, p0 can automatically generate a tech spec or you can proceed to Phase 2 manually.
-
-<Card title="Phase 2: Tech spec" icon="arrow-right" href="/workflow/tech-spec">
-  Plan the technical implementation
+<Card title="Phase 2: Refine" icon="arrow-right" href="/workflow/tech-spec">
+  Polish specs with AI assistance
 </Card>

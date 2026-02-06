@@ -11,24 +11,24 @@ This guide walks you through your first p0 session, from creating a workspace to
 
 <Steps>
   <Step title="Sign in to p0">
-    Open the p0 desktop app and enter your Purple account credentials (email and password). If you don't have an account, sign up at [bepurple.ai](https://bepurple.ai).
-
-    <Frame>
-      <img src="/images/screenshots/workspace-creation.png" alt="Workspace creation wizard" />
-    </Frame>
-
-    {/* TODO: Screenshot - capture the workspace creation wizard showing template selection */}
+    Open the p0 desktop app and sign in with your Purple account (email and password). If you don't have an account, switch to the **Create Account** tab to register.
   </Step>
 
   <Step title="Create a workspace">
-    Click **New workspace** to launch the workspace creation wizard.
+    Click **New** in the workspace picker to launch the creation wizard. The wizard walks you through:
 
-    - Choose a workspace template or start from scratch
-    - Give your workspace a name (e.g., "My Project")
-    - Add one or more git repositories from your local machine
-    - Configure coding standards and preferences (optional)
+    1. **Template** — pick a starting template (Full Stack, Backend, Frontend, etc.) or start blank
+    2. **Team** — select which Purple team owns this workspace (auto-skipped if you belong to one team)
+    3. **Name** — give your workspace a name. p0 creates a folder at `~/.purple-code/workspaces/{name}/` automatically
+    4. **Repositories** — browse and select GitHub repositories to include (optional, you can add repos later)
+    5. **Plugins** — choose workspace plugins (optional)
+    6. **Review** — confirm your selections and create the workspace
 
-    p0 will analyze your repositories and set up the workspace structure.
+    <Frame>
+      <img src="/images/screenshots/workspace-wizard.png" alt="Workspace creation wizard" />
+    </Frame>
+
+    {/* TODO: Screenshot - capture the workspace creation wizard at the template selection step */}
   </Step>
 
   <Step title="Start in Plan mode">
@@ -53,7 +53,7 @@ This guide walks you through your first p0 session, from creating a workspace to
   <Step title="Switch to Agent mode">
     If the plan looks good, switch to **Agent mode** to let p0 implement the changes:
 
-    - Click the **Switch to Agent mode** button in the session header
+    - Type `/agent` in the chat or use the mode toggle in the session header
     - p0 will execute the plan using real tools: bash commands, file edits, web searches
     - Watch in real-time as each tool runs and see the output immediately
 

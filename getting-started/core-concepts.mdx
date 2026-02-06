@@ -23,7 +23,7 @@ Before diving deep into p0, familiarize yourself with the key concepts that shap
     Think of a workspace as your project's home base in p0.
   </Card>
 
-  <Card title="Sessions" icon="comments" href="/sessions/overview">
+  <Card title="Sessions" icon="comments" href="/sessions/plan-mode">
     ### Sessions
 
     A session represents a single coding task within a workspace. Each session:
@@ -123,12 +123,11 @@ Learn more about [git worktree isolation](/sessions/git-worktree-isolation).
 
 ## Available models
 
-p0 is powered by Anthropic's Claude models:
+p0 is powered by Anthropic's Claude models. You can switch between models using the `/model` command or the model selector in the chat header:
 
-- **Claude Opus 4.5**: Maximum capability for complex reasoning and planning
-- **Claude Sonnet 4.5**: Fast, efficient performance for most coding tasks
-
-The model is automatically selected based on your task, or you can choose manually in session settings.
+- **Claude Sonnet** — fast, efficient performance for most coding tasks (default)
+- **Claude Opus** — maximum capability for complex reasoning and planning
+- **Claude Haiku** — lightweight model for quick tasks
 
 ## Next steps
 
@@ -139,7 +138,7 @@ Now that you understand the core concepts, explore specific areas:
     Learn how to create and configure workspaces
   </Card>
 
-  <Card title="Sessions" icon="comments" href="/sessions/overview">
+  <Card title="Sessions" icon="comments" href="/sessions/plan-mode">
     Master Plan and Agent modes
   </Card>
 

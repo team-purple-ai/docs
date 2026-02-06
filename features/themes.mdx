@@ -15,18 +15,27 @@ p0 supports multiple color themes that affect the entire application — from th
 
 p0 includes several carefully designed themes:
 
+### Purple themes
+
+- **Purple Deep** (default) — Rich purple backgrounds (`#0d0619`) with bright purple borders, designed for extended sessions
+- **Purple Minimal** — Black and gray (`#0a0a0a`) with subtle purple accents
+- **Purple Light** — Light mode (`#ffffff`) with purple accent colors
+
 ### Dark themes
 
-- **Purple Deep** (default) — Rich purple backgrounds with high contrast, optimized for extended coding sessions
-- **Purple Minimal** — Subtle purple accents on dark gray for a more understated look
+- **Claude Dark** — Warm dark tones with orange accent
+- **Vesper Dark** — Clean dark with orange accent
+- **Vitesse Dark** — Neutral dark
+- **Min Dark** — Minimal dark
 - **Cursor Dark** — Clean dark theme inspired by Cursor IDE
-- **Cursor Midnight** — Deep blue-black theme for late-night coding
-- **GitHub Dark** — Familiar dark theme matching GitHub's interface
+- **Cursor Midnight** — Deep blue-black for late-night coding
 
 ### Light themes
 
-- **Cursor Light** — Bright, clean theme for well-lit environments
-- **GitHub Light** — Classic light theme matching GitHub's interface
+- **Claude Light** — Warm beige with orange accent
+- **Vitesse Light** — Clean light
+- **Min Light** — Minimal light
+- **Cursor Light** — Bright, clean for well-lit environments
 
 Each theme is designed to provide excellent readability and reduce eye strain during long coding sessions.
 
@@ -43,18 +52,11 @@ p0 will then automatically switch between these themes when you change your syst
 
 ## VS Code theme compatibility
 
-p0 supports VS Code TextMate themes for syntax highlighting, giving you access to hundreds of popular themes from the VS Code ecosystem.
+p0 uses the VS Code theme format internally. All 13 built-in themes map to VS Code theme color tokens, which means:
 
-Popular VS Code themes available in p0 include:
-- Material Theme variants
-- Vitesse (light and dark)
-- Poimandres
-- Slack theme
-- Dracula
-- One Dark Pro
-- And many more
-
-The syntax highlighting engine uses Shiki, providing accurate and beautiful code coloring across all supported languages.
+- **Full CSS variable support** — every VS Code color key is mapped to a CSS custom property
+- **Shiki syntax highlighting** — code blocks use the selected theme for accurate, beautiful syntax coloring across all supported languages
+- **Terminal integration** — terminal ANSI colors are extracted from the theme, so your terminal matches the rest of the app
 
 ## What themes affect
 
