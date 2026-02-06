@@ -1,0 +1,43 @@
+---
+title: "System requirements"
+description: "Minimum requirements for running p0"
+---
+
+p0 runs on macOS, Windows, and Linux.
+
+## Operating Systems
+
+| Platform | Minimum version |
+|----------|----------------|
+| macOS | 11 (Big Sur) or later, Apple Silicon and Intel |
+| Windows | 10 or later |
+| Linux | Recent distributions (Ubuntu 20.04+, Fedora 36+, etc.) |
+
+## Hardware
+
+| Component | Minimum | Recommended |
+|-----------|---------|-------------|
+| RAM | 4 GB | 8 GB+ |
+| Disk space | 500 MB | 1 GB+ (more for worktrees) |
+
+## Software Dependencies
+
+**Required:**
+- **git**: Required for worktree isolation and repository management
+- **Internet connection**: Required for AI features
+
+p0 is built on Electron 33.4.5 and includes native dependencies:
+- better-sqlite3 (local data storage)
+- node-pty (terminal emulation)
+
+## Download Formats
+
+| Platform | Formats |
+|----------|---------|
+| macOS | DMG, ZIP (arm64 and x64) |
+| Windows | Installer (NSIS), Portable |
+| Linux | AppImage, DEB |
+
+<Note>
+Download the latest version from [bepurple.ai](https://bepurple.ai).
+</Note>

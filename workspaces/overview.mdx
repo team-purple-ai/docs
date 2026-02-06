@@ -1,0 +1,147 @@
+---
+title: "Workspaces"
+description: "Organize your repositories, settings, and coding standards in one place"
+---
+
+Workspaces are the foundation of your p0 development environment. A workspace is a container that bundles your repositories, coding standards, plugins, and AI preferences into a cohesive unit. Instead of managing scattered configuration files and repositories, workspaces let you organize everything your project needs in one place.
+
+Each workspace is tailored to your team's workflow and can contain multiple repositories, making it easy to work on full-stack projects or microservice architectures where code spans several repos.
+
+## Creating a workspace
+
+When you create a new workspace, p0 guides you through a setup wizard that configures everything based on your project type:
+
+<Steps>
+  <Step title="Choose a template">
+    Select a template that matches your project type. Templates pre-configure coding standards and plugins for your stack:
+
+    - **Full Stack** - Frontend and backend standards for web applications
+    - **Backend API** - Node.js, Python, or Go API development
+    - **Frontend Web** - React, Vue, or modern web frameworks
+    - **Mobile App** - React Native or mobile-first development
+    - **Data Science** - Python, Jupyter, data analysis tools
+    - **E-commerce** - Online store and payment integration patterns
+    - **SaaS Application** - Multi-tenant application standards
+    - **DevOps & Infrastructure** - IaC, CI/CD, and deployment configs
+    - **Blank Workspace** - Start from scratch with no defaults
+
+    <Frame>
+      <img src="/images/screenshots/workspace-template-selection.png" alt="Workspace template selection screen" />
+    </Frame>
+
+    {/* TODO: Screenshot - capture template selection screen showing all template options in a grid */}
+  </Step>
+
+  <Step title="Select your team">
+    Choose which team owns this workspace. Team selection determines:
+    - Who can access the workspace
+    - Which shared coding standards are applied
+    - Sync and collaboration settings
+
+    <Frame>
+      <img src="/images/screenshots/workspace-team-selection.png" alt="Team selection in workspace wizard" />
+    </Frame>
+
+    {/* TODO: Screenshot - capture team dropdown/selection interface */}
+  </Step>
+
+  <Step title="Name your workspace">
+    Give your workspace a descriptive name. p0 automatically generates a folder path at:
+
+    ```
+    ~/.purple-code/workspaces/{slugified-name}/
+    ```
+
+    The workspace name is used for organization and appears in the workspace switcher.
+
+    <Frame>
+      <img src="/images/screenshots/workspace-naming.png" alt="Workspace naming step" />
+    </Frame>
+
+    {/* TODO: Screenshot - capture name input field with auto-generated path preview */}
+  </Step>
+
+  <Step title="Add repositories">
+    Connect GitHub repositories to your workspace. You can:
+    - Clone existing repos from GitHub
+    - Add multiple repos for multi-repo projects
+    - Skip this step and add repos later
+
+    This step is optional—you can always add repositories from workspace settings after creation.
+
+    <Frame>
+      <img src="/images/screenshots/workspace-repo-selection.png" alt="Repository selection interface" />
+    </Frame>
+
+    {/* TODO: Screenshot - capture GitHub repo browser with search and multi-select */}
+  </Step>
+
+  <Step title="Select plugins">
+    Choose plugins to extend p0's functionality for your workspace. Available plugins vary by template and include:
+    - Database connectors
+    - API testing tools
+    - Deployment integrations
+    - Code quality analyzers
+
+    Like repositories, plugins can be added or removed later from settings.
+
+    <Frame>
+      <img src="/images/screenshots/workspace-plugin-selection.png" alt="Plugin selection screen" />
+    </Frame>
+
+    {/* TODO: Screenshot - capture plugin grid with descriptions and toggle switches */}
+  </Step>
+
+  <Step title="Review and create">
+    Review your workspace configuration:
+    - Template and standards applied
+    - Connected repositories
+    - Enabled plugins
+    - Team and sync settings
+
+    Click "Create Workspace" to finalize setup. p0 will initialize your workspace and clone any selected repositories.
+
+    <Frame>
+      <img src="/images/screenshots/workspace-review.png" alt="Workspace creation review summary" />
+    </Frame>
+
+    {/* TODO: Screenshot - capture review/summary screen with all selections listed */}
+  </Step>
+</Steps>
+
+## Workspace dashboard
+
+After creating your workspace, you'll see the workspace dashboard—your command center for all development activity:
+
+- **Sessions list** - View active and past coding sessions
+- **Repository overview** - Quick access to all connected repos
+- **Quick actions** - Start new sessions, manage settings, sync with team
+- **Standards summary** - Overview of active coding standards
+- **Plugin status** - See which plugins are enabled
+
+<Frame>
+  <img src="/images/screenshots/workspace-dashboard.png" alt="Workspace dashboard showing sessions and repos" />
+</Frame>
+
+{/* TODO: Screenshot - capture full workspace dashboard view with all sections visible */}
+
+<Tip>
+  You can always add repositories and plugins later from workspace settings. Don't worry about getting everything perfect during initial setup.
+</Tip>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Multi-repo workspaces" icon="code-branch" href="/workspaces/multi-repo">
+    Learn how to work across multiple repositories
+  </Card>
+  <Card title="Workspace settings" icon="gear" href="/workspaces/settings">
+    Configure standards, repos, and plugins
+  </Card>
+  <Card title="Coding standards" icon="book" href="/features/coding-standards">
+    Understand how standards guide AI behavior
+  </Card>
+  <Card title="Plugins" icon="puzzle-piece" href="/features/plugins">
+    Extend p0 with workspace plugins
+  </Card>
+</CardGroup>

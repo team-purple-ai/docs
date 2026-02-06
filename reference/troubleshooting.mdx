@@ -1,0 +1,85 @@
+---
+title: "Troubleshooting"
+description: "Solutions to common issues with p0"
+---
+
+Common issues and how to resolve them.
+
+<AccordionGroup>
+  <Accordion title="Installation issues">
+    **App won't launch**
+    - Check that your OS meets the minimum requirements (macOS 11+, Windows 10+, or recent Linux)
+    - Try reinstalling the app
+
+    **Permission errors on macOS**
+    - Move p0 to your Applications folder
+    - Right-click and select "Open" the first time you launch
+
+    **Windows SmartScreen warning**
+    - Click "More info" then "Run anyway"
+    - This warning appears because the app is not widely distributed yet
+  </Accordion>
+
+  <Accordion title="Authentication issues">
+    **Can't sign in**
+    - Check your internet connection
+    - Verify your email and password are correct
+    - Try resetting your password at bepurple.ai
+
+    **Session expired**
+    - Sign out and sign back in
+    - Check that your system clock is accurate
+  </Accordion>
+
+  <Accordion title="Workspace issues">
+    **Workspace won't create**
+    - Check you have sufficient disk space
+    - Verify git is installed and accessible from the command line
+    - Try creating a workspace in a different location
+
+    **Repository clone fails**
+    - Check you have access to the repository
+    - Verify your SSH keys are set up correctly for private repos
+    - Try using HTTPS instead of SSH for the clone URL
+  </Accordion>
+
+  <Accordion title="Session issues">
+    **Session stuck or unresponsive**
+    - Try running `/compact` to reduce context size
+    - Start a new sub-chat with `Cmd+K` or `Ctrl+K`
+    - Close and reopen the tab
+
+    **Worktree errors**
+    - Check git status in your main repository
+    - Delete stale worktrees manually with `git worktree prune`
+    - Ensure you don't have uncommitted changes blocking operations
+  </Accordion>
+
+  <Accordion title="AI issues">
+    **Slow responses**
+    - Check your internet connection
+    - Try switching to Sonnet 4.5 for faster responses
+    - Compact your context with `Cmd+Shift+K` or `Ctrl+Shift+K`
+
+    **Unexpected output**
+    - Provide clearer, more specific instructions
+    - Use Plan mode first to review the approach
+    - Try breaking complex tasks into smaller steps
+  </Accordion>
+
+  <Accordion title="Terminal issues">
+    **Terminal not responding**
+    - Close and reopen the tab
+    - Check that the underlying process hasn't crashed
+
+    **Missing icons or broken fonts**
+    - Install a Nerd Font for proper shell theme icon support
+    - Configure your terminal to use the Nerd Font
+  </Accordion>
+</AccordionGroup>
+
+## Getting Help
+
+- Run `/doctor` in p0 to check installation health and diagnose common issues
+- Contact support at support@bepurple.ai
+- Check the [FAQ](/reference/faq) for answers to common questions

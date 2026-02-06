@@ -1,0 +1,65 @@
+---
+title: "Agent mode"
+description: "Let p0 execute code changes, run commands, and modify files directly"
+---
+
+Agent mode gives p0 full execution capabilities, allowing it to make changes to your codebase, run commands, and implement solutions directly. This is the default mode for new sessions.
+
+## Available tools
+
+In Agent mode, p0 has access to all tools including:
+
+- **Bash** - Execute shell commands
+- **Edit** - Modify existing files with precise edits
+- **Write** - Create new files or overwrite existing ones
+- **Read** - View file contents
+- **Grep** - Search for patterns in files
+- **Glob** - Find files by name patterns
+- **WebSearch** - Search the web for information
+- **WebFetch** - Fetch content from URLs
+- **NotebookEdit** - Modify Jupyter notebooks
+- **Task** - Break down complex tasks
+- **Thinking** - Internal reasoning
+
+This full toolkit enables p0 to analyze your code and implement changes end-to-end.
+
+## How execution works
+
+When you give p0 a task in Agent mode:
+
+1. The AI proposes tool calls (commands, file edits, etc.)
+2. Each tool call is executed in real-time
+3. Results and output are shown immediately
+4. The AI adapts based on the results and continues
+
+You can see exactly what p0 is doing at each step, with full transparency into commands run and files modified.
+
+## Safety model
+
+Agent mode can make real changes, but p0 keeps your main branch safe through worktree isolation:
+
+- All changes happen in an isolated git worktree
+- Your main working directory remains untouched
+- You review diffs before merging changes back
+- Worktrees can be discarded if you're not satisfied
+
+This isolation means you can experiment freely without risk to your current work.
+
+## Switching from Plan mode
+
+If you start in Plan mode, you can switch to Agent mode after reviewing the plan:
+
+1. **Approve the plan** - p0 automatically switches to Agent mode and begins implementation
+2. **Use /agent command** - Manually switch to Agent mode at any time during the conversation
+
+The conversation history is preserved when switching modes.
+
+<Frame>
+  <img src="/images/screenshots/agent-mode.png" alt="Agent mode executing commands and making file changes" />
+</Frame>
+
+{/* TODO: Screenshot - Capture agent mode showing the AI executing bash commands and making file edits, with output visible in the UI */}
+
+<Warning>
+Agent mode can execute bash commands and modify files. Always review changes in the session diff before merging to ensure the implementation matches your expectations.
+</Warning>

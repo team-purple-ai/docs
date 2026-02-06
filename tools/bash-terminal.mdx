@@ -1,0 +1,58 @@
+---
+title: "Bash commands"
+description: "How p0 runs shell commands with streaming output and safety controls"
+---
+
+The Bash tool lets the AI run shell commands in your session's worktree, giving it the ability to execute builds, run tests, install dependencies, and interact with command-line tools.
+
+## How it works
+
+When the AI needs to run a command:
+
+1. The AI proposes a command
+2. The command executes in the session's worktree directory
+3. stdout and stderr stream in real-time as the command runs
+4. The exit code determines success (0) or failure (non-zero)
+
+All commands run in the isolated worktree for your session, preventing interference with your main branch.
+
+## Output display
+
+The Bash tool displays command execution with:
+
+- **Command summary**: Header shows the first word of each piped command (e.g., "git status" or "npm install | grep")
+- **Expandable output**: Output is collapsed to 3 lines by default, click to expand for full output
+- **Color-coded borders**: Green border on success (exit 0), red on error (non-zero exit)
+- **Exit code**: Displayed in the tool header
+
+<Frame>
+  <img src="/images/screenshots/bash-tool.png" alt="Bash tool showing command execution with streaming output" />
+</Frame>
+
+{/* TODO: Screenshot - capture bash tool execution showing command, streaming output, and exit code */}
+
+## Environment
+
+Commands run in a filtered environment for security:
+
+- **Safe variables**: Only safe environment variables are passed (PATH, HOME, SSH_AUTH_SOCK, version managers like NVM_DIR, RBENV_ROOT, etc.)
+- **No app secrets**: App secrets are never leaked to terminal sessions
+- **User permissions**: Commands execute with your user permissions
+
+This ensures your credentials and sensitive data remain protected.
+
+## Background processes
+
+Long-running commands can be backgrounded to avoid blocking the AI:
+
+- Use the `run_in_background` parameter for commands that take significant time
+- Check on background processes with the BashOutput tool
+- Kill background processes with the KillShell tool
+
+<Tip>
+Background processes are useful for long builds, test suites, or development servers that the AI needs to start but doesn't need to wait for.
+</Tip>
+
+<Warning>
+Bash commands execute with your user permissions. Worktree isolation prevents changes to your main branch, but commands can still affect system state (installing packages, modifying files outside the worktree, etc.).
+</Warning>

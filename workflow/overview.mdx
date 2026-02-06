@@ -1,0 +1,80 @@
+---
+title: "Spec-driven workflow"
+description: "Take features from idea to pull request through a structured five-phase pipeline"
+---
+
+p0's spec-driven workflow guides you from product requirements through implementation to pull request, keeping every step documented and reviewable. This structured approach ensures clarity at each stage and makes complex features manageable.
+
+## The five phases
+
+<Steps>
+  <Step title="Product spec">
+    Define what to build with user stories, requirements, and acceptance criteria
+  </Step>
+  <Step title="Tech spec">
+    Plan how to build it with architecture decisions, file changes, and dependencies
+  </Step>
+  <Step title="Implementation">
+    AI writes the code with real-time monitoring and full visibility into every change
+  </Step>
+  <Step title="Pull request">
+    Review diffs, write PR description, and push your changes
+  </Step>
+  <Step title="Post-PR">
+    Handle review feedback and follow-up changes
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/screenshots/workflow-overview.png" alt="Spec-driven workflow phases" />
+</Frame>
+
+{/* TODO: Screenshot - capture the workflow overview showing all five phases with status indicators */}
+
+## Getting started
+
+Use the `/build-from-spec` command to run the full pipeline from start to finish. p0 will guide you through each phase, pausing for your review and approval at key checkpoints.
+
+You can also enter individual phases using commands like `/import-spec` or `/engineer-tasks` if you want to start at a specific stage.
+
+## Feature folders
+
+All specs and documentation are organized in feature folders:
+
+```
+purple/documentation/{YYMMDD}-{slug}/
+  ├── product-spec.md
+  ├── tech-spec.md
+  ├── implementation-log.md
+  └── progress.json
+```
+
+Original specs are also stored in `purple/documentation/user-originals/` for reference.
+
+## Skipping phases
+
+If you already have a product spec or tech spec written, you can jump directly to any phase. p0 will detect existing specs and use them to inform the implementation.
+
+<Note>
+  The spec-driven workflow is designed to be flexible. You can pause at any phase, make manual changes, and resume where you left off.
+</Note>
+
+## Explore each phase
+
+<CardGroup cols={2}>
+  <Card title="Phase 1: Product spec" icon="file-lines" href="/workflow/product-spec">
+    Define requirements and acceptance criteria
+  </Card>
+  <Card title="Phase 2: Tech spec" icon="code" href="/workflow/tech-spec">
+    Plan architecture and file changes
+  </Card>
+  <Card title="Phase 3: Implementation" icon="gear" href="/workflow/implementation">
+    Watch AI write code in real-time
+  </Card>
+  <Card title="Phase 4: Pull request" icon="code-pull-request" href="/workflow/pull-request">
+    Review changes and create PR
+  </Card>
+  <Card title="Phase 5: Post-PR" icon="comment" href="/workflow/post-pr">
+    Handle feedback and follow-up
+  </Card>
+</CardGroup>

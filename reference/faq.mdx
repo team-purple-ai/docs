@@ -1,0 +1,59 @@
+---
+title: "FAQ"
+description: "Frequently asked questions about p0"
+---
+
+Answers to common questions about p0.
+
+<AccordionGroup>
+  <Accordion title="What AI model does p0 use?">
+    p0 uses Claude by Anthropic. You can choose between:
+
+    - **Opus 4.5**: The most capable model, best for complex reasoning and challenging tasks
+    - **Sonnet 4.5**: Balanced performance and speed, set as the default
+
+    Change your model preference in Settings > Model.
+  </Accordion>
+
+  <Accordion title="Is my code sent to the cloud?">
+    Code context is sent to Anthropic's API for processing by Claude. This is necessary for the AI to understand and work with your code.
+
+    No code is stored on Purple's servers beyond what's needed for the API call. See [Security & Privacy](/reference/security-and-privacy) for complete details.
+  </Accordion>
+
+  <Accordion title="Can I use p0 offline?">
+    p0 requires an internet connection for AI features, as Claude runs in the cloud.
+
+    The terminal and file browsing work offline, but you won't be able to get AI assistance without connectivity.
+  </Accordion>
+
+  <Accordion title="What programming languages are supported?">
+    p0 works with any programming language that Claude supports, which includes all major languages:
+
+    JavaScript, TypeScript, Python, Java, C++, C#, Go, Rust, Ruby, PHP, Swift, Kotlin, and many more.
+  </Accordion>
+
+  <Accordion title="Can I use my own API key?">
+    p0 uses Purple's managed API access. You don't need your own Anthropic API key.
+
+    Your Purple subscription includes API access as part of the service.
+  </Accordion>
+
+  <Accordion title="How do worktrees affect my git history?">
+    Worktree branches are separate from your main branch. p0 creates isolated git worktrees so the AI can work without affecting your current branch.
+
+    You choose when to merge changes back to your main branch. The worktree branches don't pollute your history unless you explicitly merge them.
+  </Accordion>
+
+  <Accordion title="Can multiple people work in the same workspace?">
+    Workspaces are local to your machine, but coding standards and plugins can sync via your Purple team settings.
+
+    For collaboration, team members can each create their own workspace pointing to the same repository, and use git for coordination.
+  </Accordion>
+
+  <Accordion title="How do I update p0?">
+    p0 updates automatically in the background. You'll be notified when an update is ready to install.
+
+    Updates are seamless and don't interrupt your work. You can choose when to restart and apply the update.
+  </Accordion>
+</AccordionGroup>

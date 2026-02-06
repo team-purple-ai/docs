@@ -1,0 +1,65 @@
+---
+title: "Tool execution"
+description: "How p0 runs tools and visualizes their output in real-time"
+---
+
+p0's AI uses tools to interact with your codebase. Every tool call is visible with real-time output, giving you complete transparency into what the AI is doing.
+
+## What are tools
+
+Tools are capabilities the AI uses to accomplish tasks — reading files, running commands, editing code, searching the web. Each tool call shows:
+
+- **Inputs**: The parameters passed to the tool
+- **Outputs**: The results returned by the tool
+- **Status**: Whether the tool succeeded or failed
+
+Every action the AI takes goes through a tool. Nothing happens invisibly.
+
+## Real-time visualization
+
+p0 visualizes tool execution with animated status indicators:
+
+- **Pending**: Shimmer animation while the tool is queued
+- **Running**: Animated purple border during execution
+- **Success**: Green checkmark when the tool completes successfully
+- **Error**: Red indicator with error details if the tool fails
+
+This lifecycle visualization helps you understand exactly what's happening at any moment.
+
+<Frame>
+  <img src="/images/screenshots/tool-execution.png" alt="Tool execution panel showing real-time status" />
+</Frame>
+
+{/* TODO: Screenshot - capture tool execution panel with multiple tools in different states (pending, running, success, error) */}
+
+## Tool categories
+
+p0 provides 27+ tool types organized into categories:
+
+<CardGroup cols={2}>
+  <Card title="File operations" icon="file">
+    Read, Edit, Write, Grep, Glob for working with your codebase
+  </Card>
+  <Card title="Execution" icon="terminal">
+    Bash commands with streaming output and exit codes
+  </Card>
+  <Card title="Web" icon="globe">
+    WebSearch and WebFetch for external documentation and APIs
+  </Card>
+  <Card title="Planning" icon="list-check">
+    Task (subagents), TodoWrite, PlanWrite, and Thinking for complex workflows
+  </Card>
+</CardGroup>
+
+## Permission model
+
+p0 uses a permission model to control tool access:
+
+- **Plan mode**: Read-only tools only (Read, Grep, Glob, WebFetch). The AI can explore but cannot make changes.
+- **Agent mode**: All tools enabled. The AI can edit files, run commands, and make changes to your codebase.
+
+This ensures you maintain control over when the AI can modify your project.
+
+<Note>
+You can switch between Plan and Agent modes at any time using the mode selector in the session header.
+</Note>

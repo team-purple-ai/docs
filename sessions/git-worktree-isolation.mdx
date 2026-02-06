@@ -1,0 +1,77 @@
+---
+title: "Git worktree isolation"
+description: "Every session runs in an isolated git worktree to keep your main branch safe"
+---
+
+p0 creates a separate git worktree for each session, ensuring that AI-generated changes never touch your working directory. This isolation protects your main branch and lets you experiment freely.
+
+## How worktrees work
+
+When you start a new p0 session in worktree mode (the default):
+
+1. **Session starts** - p0 creates a new git branch and worktree
+2. **Worktree location** - The worktree is stored at `~/.purple-code/worktrees/{workspaceName}-wt-{sessionId}/`
+3. **Symlinks created** - Configuration directories (`purple/`, `.claude/`, `.mcp.json`) are symlinked from your workspace
+4. **AI works isolated** - p0 makes all changes in the worktree while your main branch stays clean
+5. **Review and merge** - When finished, you review the diff and merge or discard the changes
+
+This means you can continue working in your IDE on your main branch while p0 works in parallel on a separate branch.
+
+## Branch naming
+
+Worktree branches follow a consistent naming pattern:
+
+- **Format**: `{workspaceName}-wt-{hex}`
+- **Example**: `my-app-wt-a3f2`
+- **Alternative**: `{adjective}-{animal}-{hex}` (e.g., `swift-panda-7b3e`)
+
+These branch names make it easy to identify which session created which worktree.
+
+## Multi-repo worktrees
+
+For workspaces containing multiple git repositories, p0 creates a worktree for each repo:
+
+```
+~/.purple-code/worktrees/{workspace}-wt-{session}/
+├── repo-a/           # Worktree for workspace/repo-a
+├── repo-b/           # Worktree for workspace/repo-b
+├── purple/           # Symlink to workspace/purple/
+├── .claude/          # Symlink to workspace/.claude/
+└── .workspace-root   # Marker file
+```
+
+This multi-repo structure preserves the workspace layout while isolating changes across all repositories.
+
+The symlinked directories ensure that:
+- Purple configuration is shared across all repos
+- Claude settings and context are consistent
+- MCP tools remain accessible
+
+## Merging and discarding
+
+When your session is complete, you have two options:
+
+**Merge the changes**:
+1. Review the diff in p0's session interface
+2. Approve the changes
+3. p0 merges the worktree branch into your target branch
+4. The worktree can be removed after merging
+
+**Discard the changes**:
+1. Close the session without merging
+2. Delete the worktree branch
+3. The worktree directory can be cleaned up
+
+This workflow gives you complete control over what changes make it into your codebase.
+
+## Local mode
+
+<Note>
+While worktree mode is recommended and set as the default, you can also configure p0 to work directly in your project directory using **local mode**. In local mode, changes are made directly to your working directory without worktree isolation.
+
+To use local mode, change the work mode setting from "worktree" to "local" in your session configuration.
+</Note>
+
+<Tip>
+Worktree isolation means you can keep working in your IDE while p0 makes changes in a separate branch. Your editor won't show file changes or trigger rebuilds until you choose to merge.
+</Tip>

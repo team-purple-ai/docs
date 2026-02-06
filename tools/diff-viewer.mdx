@@ -1,0 +1,77 @@
+---
+title: "Diff viewer"
+description: "Review all session changes in tree or grouped view"
+---
+
+The session diff viewer shows all file changes made during a session, organized by directory structure or change type. This gives you a complete overview of what the AI has modified.
+
+## Accessing the diff
+
+Open the diff viewer in two ways:
+
+- Click the **diff icon** in the session header
+- Open the **sidebar** and navigate to the Diff tab
+
+The diff viewer is available at any time during or after a session.
+
+## View modes
+
+Choose between two organizational modes:
+
+### Tree mode
+
+Files are organized by directory structure:
+
+- Mirrors your project's folder hierarchy
+- Expandable/collapsible directories
+- Easy to see changes in a specific part of your codebase
+
+### Grouped mode
+
+Files are grouped by change type:
+
+- **Modified**: Files that were edited
+- **Created**: New files that were added
+- **Deleted**: Files that were removed
+
+Switch between modes using the view selector at the top of the diff viewer.
+
+## Diff display
+
+The diff viewer supports two display styles:
+
+### Unified view
+
+Single column showing additions and removals inline:
+
+- **Green lines**: Additions (prefixed with +)
+- **Red lines**: Removals (prefixed with -)
+- **White lines**: Unchanged context
+
+### Split view
+
+Side-by-side comparison:
+
+- **Left side**: Original content
+- **Right side**: Modified content
+- **Synchronized scrolling**: Both sides scroll together
+
+<Frame>
+  <img src="/images/screenshots/diff-viewer.png" alt="Diff viewer showing file changes in tree mode" />
+</Frame>
+
+{/* TODO: Screenshot - capture diff viewer in tree mode with several files changed, showing the directory structure and diff preview */}
+
+## Navigating changes
+
+Click any file in the list to jump to its diff:
+
+- **Instant navigation**: The diff scrolls to show the selected file
+- **Highlighted changes**: Additions in green, removals in red
+- **Context**: See surrounding unchanged code for context
+
+This makes it easy to review changes across multiple files quickly.
+
+<Tip>
+Use the diff viewer before committing changes to review everything the AI did in a session. It's like `git diff` but organized by the AI's work.
+</Tip>

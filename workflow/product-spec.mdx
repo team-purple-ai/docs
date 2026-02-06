@@ -1,0 +1,64 @@
+---
+title: "Phase 1: Product spec"
+description: "Define what to build with user stories and acceptance criteria"
+---
+
+The product spec captures requirements in a structured format that guides all subsequent phases. A well-written product spec ensures everyone understands what needs to be built before any code is written.
+
+## Creating a product spec
+
+You have two options for creating a product spec:
+
+### Import an existing spec
+
+Use `/import-spec` to import a spec you've already written. p0 supports various formats and will help you structure it into the standard template.
+
+### Generate a new spec
+
+Describe your feature to p0 in natural language, and it will generate a structured product spec for you. You can iterate on this together until it captures your requirements accurately.
+
+### Spec template
+
+Every product spec follows this structure:
+
+- **Overview**: High-level description of the feature
+- **User Stories**: Who needs this and why
+- **Requirements**: Functional and non-functional requirements
+- **Acceptance Criteria**: Clear, testable conditions for completion
+- **Technical Notes**: Any constraints, dependencies, or considerations
+
+<Frame>
+  <img src="/images/screenshots/product-spec-editor.png" alt="Product spec editor interface" />
+</Frame>
+
+{/* TODO: Screenshot - capture SpecFilePicker component with a sample product spec being reviewed */}
+
+## Reviewing the spec
+
+p0 presents the spec for your review in a readable format. You can:
+
+- Edit sections directly
+- Ask for more detail in specific areas
+- Add edge cases or constraints
+- Approve and move to the next phase
+
+<Tip>
+  The more detail you provide in the product spec, the better the implementation will be. Take time to think through edge cases and acceptance criteria.
+</Tip>
+
+## Spec storage
+
+Once approved, the product spec is saved to:
+
+- `purple/documentation/user-originals/` (permanent storage)
+- `purple/documentation/{YYMMDD}-{slug}/product-spec.md` (feature folder)
+
+The feature folder becomes the central hub for all documentation related to this feature.
+
+## Next steps
+
+After the product spec is approved, p0 can automatically generate a tech spec or you can proceed to Phase 2 manually.
+
+<Card title="Phase 2: Tech spec" icon="arrow-right" href="/workflow/tech-spec">
+  Plan the technical implementation
+</Card>

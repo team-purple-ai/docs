@@ -1,0 +1,110 @@
+---
+title: Installation
+description: Download and install p0 on macOS, Windows, or Linux
+---
+
+# Installation
+
+Get p0 running on your development machine in minutes. The desktop app is available for all major platforms with native builds optimized for each operating system.
+
+## Download and install
+
+<Tabs>
+  <Tab title="macOS">
+    ### Download for macOS
+
+    p0 supports both Apple Silicon (M1/M2/M3) and Intel-based Macs running macOS 11.0 or later.
+
+    1. Download the DMG installer from [bepurple.ai](https://bepurple.ai)
+    2. Open the downloaded `.dmg` file
+    3. Drag the p0 app to your Applications folder
+    4. Launch p0 from Applications or Spotlight
+
+    **First launch**: macOS may show a security prompt. Go to System Preferences > Security & Privacy and click "Open Anyway" to allow p0 to run.
+  </Tab>
+
+  <Tab title="Windows">
+    ### Download for Windows
+
+    p0 supports Windows 10 and Windows 11 (64-bit).
+
+    1. Download the NSIS installer from [bepurple.ai](https://bepurple.ai)
+    2. Run the `p0-setup.exe` file
+    3. Follow the installation wizard
+    4. Launch p0 from the Start menu or desktop shortcut
+
+    **Administrator rights**: The installer may request administrator privileges to install system-level components.
+  </Tab>
+
+  <Tab title="Linux">
+    ### Download for Linux
+
+    p0 is available as an AppImage or .deb package for Ubuntu, Debian, and other distributions.
+
+    **AppImage** (universal):
+    ```bash
+    chmod +x p0.AppImage
+    ./p0.AppImage
+    ```
+
+    **Debian/Ubuntu** (.deb package):
+    ```bash
+    sudo dpkg -i p0.deb
+    sudo apt-get install -f  # Install dependencies if needed
+    ```
+
+    Launch p0 from your application menu or run `p0` from the terminal.
+  </Tab>
+</Tabs>
+
+## First launch
+
+When you open p0 for the first time, you'll be prompted to sign in with your Purple account.
+
+<Frame>
+  <img src="/images/screenshots/login-screen.png" alt="p0 login screen" />
+</Frame>
+
+{/* TODO: Screenshot - capture the login screen showing email/password fields */}
+
+<Steps>
+  <Step title="Enter your credentials">
+    Sign in with your Purple account email and password
+  </Step>
+
+  <Step title="Grant permissions">
+    p0 will request access to your file system for repository management
+  </Step>
+
+  <Step title="You're ready">
+    Start creating workspaces and coding with AI assistance
+  </Step>
+</Steps>
+
+<Note>
+  Don't have a Purple account yet? Sign up at [bepurple.ai](https://bepurple.ai) to get started.
+</Note>
+
+## Auto-updates
+
+p0 automatically checks for updates in the background and installs them when you restart the app. You'll see a notification when a new version is available.
+
+Updates include:
+- New features and improvements
+- Bug fixes and performance enhancements
+- Updated Claude models
+- Security patches
+
+You can check your current version in Settings > About.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/getting-started/quickstart">
+    Create your first workspace and start coding
+  </Card>
+
+  <Card title="Core concepts" icon="book" href="/getting-started/core-concepts">
+    Learn the fundamentals of p0
+  </Card>
+</CardGroup>

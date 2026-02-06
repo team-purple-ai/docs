@@ -1,0 +1,60 @@
+---
+title: "Security and privacy"
+description: "How p0 handles your data, code, and privacy"
+---
+
+Purple takes security and privacy seriously. Here's how p0 handles your data.
+
+## Data Handling
+
+- **Session data**: Stored locally in SQLite using better-sqlite3
+- **Workspace configuration**: Stored at `~/.purple-code/`
+- **Code context**: Sent to Anthropic's Claude API for AI processing
+- **No server storage**: No code is stored on Purple's servers beyond what's needed for the API call
+
+All your coding sessions, chat history, and workspace settings remain on your local machine.
+
+## Encryption
+
+All API communication between p0 and Purple's services uses HTTPS/TLS encryption to protect data in transit.
+
+## Environment Security
+
+Terminal sessions use an allowlist-based environment filter. Only safe variables (PATH, HOME, etc.) are passed to terminal processes.
+
+App secrets and sensitive environment variables are never exposed to terminal sessions, protecting your credentials and API keys.
+
+## Analytics
+
+p0 uses PostHog for anonymous usage analytics to help improve the product. Analytics data includes:
+
+- Feature usage patterns
+- Performance metrics
+- Error rates
+
+**You can opt out** in Settings > Preferences by enabling "Analytics opt-out".
+
+## Error Tracking
+
+p0 includes optional Sentry integration for crash reporting. This helps Purple identify and fix bugs quickly.
+
+Error reports may include:
+- Stack traces
+- App state at time of error
+- Device information (OS version, app version)
+
+Error reports do not include your code or workspace contents.
+
+## Telemetry Opt-Out
+
+To disable analytics tracking:
+
+1. Open Settings (`Cmd+,` or `Ctrl+,`)
+2. Go to Preferences
+3. Enable "Analytics opt-out"
+
+This will stop all analytics data collection while continuing to provide full app functionality.
+
+<Note>
+For questions about privacy or data handling, contact privacy@bepurple.ai.
+</Note>

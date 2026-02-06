@@ -1,0 +1,88 @@
+---
+title: "Phase 3: Implementation"
+description: "Watch the AI write code in real-time with full visibility into every change"
+---
+
+p0 executes the tech spec, making file edits, running commands, and testing as it goes. You have full visibility into every action, with the ability to intervene at any time.
+
+## Real-time monitoring
+
+Watch tool execution as it happens:
+
+- **Bash commands**: See commands run, view output, check exit codes
+- **File edits**: View exact changes with before/after diffs
+- **Test runs**: Monitor test execution and results
+- **Grep/search operations**: See what p0 is looking for and finding
+
+Each tool call shows:
+
+- Input parameters
+- Execution status
+- Output or results
+- Duration
+
+<Frame>
+  <img src="/images/screenshots/implementation-progress.png" alt="Implementation in progress with tool execution visible" />
+</Frame>
+
+{/* TODO: Screenshot - capture the implementation phase with multiple tool calls visible, showing Edit and Bash tools in action */}
+
+## Parallel execution
+
+For features with multiple independent files, use `/orchestrate` to run parallel implementation. p0 will:
+
+- Identify independent work streams
+- Execute file changes concurrently
+- Coordinate dependencies
+- Merge results safely
+
+This dramatically speeds up implementation for larger features.
+
+## Intervention
+
+You can pause, redirect, or ask questions at any point during implementation:
+
+- Stop execution to review changes
+- Ask why p0 made a specific choice
+- Request a different approach
+- Point out errors before they propagate
+
+<Tip>
+  Use the session diff viewer to monitor cumulative changes as implementation progresses.
+</Tip>
+
+## Tool execution
+
+p0 uses a variety of tools during implementation:
+
+- **Edit**: Make precise changes to existing files
+- **Write**: Create new files
+- **Bash**: Run commands, tests, and scripts
+- **Read**: View file contents
+- **Grep**: Search for patterns across files
+- **Glob**: Find files by pattern
+
+<Card title="Learn more about tools" icon="wrench" href="/tools/overview">
+  Explore all available tools and their capabilities
+</Card>
+
+## Testing and verification
+
+Throughout implementation, p0:
+
+- Runs tests after changes
+- Checks for syntax errors
+- Verifies imports and dependencies
+- Ensures code follows project conventions
+
+<Warning>
+  Review the session diff carefully before moving to the PR phase. This is your chance to catch issues before they enter version control.
+</Warning>
+
+## Next steps
+
+When implementation is complete, move to Phase 4 to review changes and create a pull request.
+
+<Card title="Phase 4: Pull request" icon="arrow-right" href="/workflow/pull-request">
+  Review changes and create PR
+</Card>

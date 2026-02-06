@@ -1,0 +1,153 @@
+---
+title: Core concepts
+description: Understand the building blocks of p0 - workspaces, sessions, modes, and the spec-driven workflow
+---
+
+# Core concepts
+
+Before diving deep into p0, familiarize yourself with the key concepts that shape how you work with the AI coding assistant. These building blocks work together to create a safe, productive development workflow.
+
+## Foundational concepts
+
+<CardGroup cols={2}>
+  <Card title="Workspaces" icon="folder-tree" href="/workspaces/overview">
+    ### Workspaces
+
+    A workspace is a container for one or more git repositories, along with shared settings, coding standards, and plugins. Workspaces let you:
+
+    - Work across multiple repos in a unified environment
+    - Define project-wide conventions and preferences
+    - Share context between sessions
+    - Install workspace-scoped plugins
+
+    Think of a workspace as your project's home base in p0.
+  </Card>
+
+  <Card title="Sessions" icon="comments" href="/sessions/overview">
+    ### Sessions
+
+    A session represents a single coding task within a workspace. Each session:
+
+    - Gets its own isolated git worktree for safety
+    - Has a dedicated chat thread for communication
+    - Can run in Plan mode (read-only) or Agent mode (full execution)
+    - Tracks all changes and tool executions
+
+    Sessions keep your work organized and your main branch protected.
+  </Card>
+
+  <Card title="Modes" icon="toggle-on" href="/sessions/plan-mode">
+    ### Plan vs Agent modes
+
+    p0 operates in two distinct modes:
+
+    **Plan mode** (read-only):
+    - Analyzes your codebase without making changes
+    - Generates detailed implementation plans
+    - Researches files and dependencies
+    - Safe for exploration and brainstorming
+
+    **Agent mode** (execution):
+    - Implements changes using real tools
+    - Runs bash commands, edits files, searches the web
+    - Shows real-time tool output
+    - Creates commits and manages git
+
+    Start with Plan, switch to Agent when ready.
+  </Card>
+
+  <Card title="Spec-driven workflow" icon="list-check" href="/workflow/overview">
+    ### Spec-driven workflow
+
+    p0 follows a five-phase pipeline for complex features:
+
+    1. **Product spec**: Define what you're building and why
+    2. **Tech spec**: Plan the technical implementation
+    3. **Implementation**: Execute the changes
+    4. **Pull request**: Review and merge
+    5. **Post-PR**: Follow-up tasks and refinements
+
+    This structured approach ensures quality at every step.
+  </Card>
+
+  <Card title="Tools" icon="wrench" href="/tools/overview">
+    ### Real-time tools
+
+    When running in Agent mode, p0 uses tools to interact with your codebase:
+
+    - **Bash**: Run terminal commands
+    - **File operations**: Read, write, edit files
+    - **Web search**: Research APIs and documentation
+    - **Git operations**: Commit, branch, diff
+
+    Every tool execution is visible in real-time with full output, giving you complete transparency into what p0 is doing.
+  </Card>
+
+  <Card title="Sub-chats" icon="message" href="/sessions/sub-chats">
+    ### Sub-chats
+
+    Complex sessions can have multiple conversation threads called sub-chats:
+
+    - Break large tasks into focused discussions
+    - Work on parallel concerns simultaneously
+    - Keep related context together
+    - Switch between threads without losing progress
+
+    Sub-chats help manage complexity in long-running sessions.
+  </Card>
+</CardGroup>
+
+## How it all fits together
+
+Here's how these concepts work together in a typical p0 workflow:
+
+1. You create a **workspace** for your project and add repositories
+2. You start a **session** for a specific task (e.g., "Add user authentication")
+3. p0 operates in **Plan mode** to analyze and create a plan
+4. You review the plan and switch to **Agent mode** for execution
+5. p0 uses **tools** (bash, file edits) to implement changes in an isolated git worktree
+6. For complex features, you follow the **spec-driven workflow** with multiple phases
+7. You use **sub-chats** to work on different aspects in parallel
+8. When complete, you review the diff and create a pull request
+
+## Git worktree isolation
+
+One of p0's most important safety features is git worktree isolation. Each session runs in its own worktree, which means:
+
+- Your main branch stays clean and untouched
+- Multiple sessions can run concurrently without conflicts
+- You can experiment freely without risk
+- Failed sessions don't pollute your workspace
+
+Learn more about [git worktree isolation](/sessions/git-worktree-isolation).
+
+## Available models
+
+p0 is powered by Anthropic's Claude models:
+
+- **Claude Opus 4.5**: Maximum capability for complex reasoning and planning
+- **Claude Sonnet 4.5**: Fast, efficient performance for most coding tasks
+
+The model is automatically selected based on your task, or you can choose manually in session settings.
+
+## Next steps
+
+Now that you understand the core concepts, explore specific areas:
+
+<CardGroup cols={2}>
+  <Card title="Workspaces" icon="folder-tree" href="/workspaces/overview">
+    Learn how to create and configure workspaces
+  </Card>
+
+  <Card title="Sessions" icon="comments" href="/sessions/overview">
+    Master Plan and Agent modes
+  </Card>
+
+  <Card title="Spec-driven workflow" icon="list-check" href="/workflow/overview">
+    Follow the five-phase pipeline for complex features
+  </Card>
+
+  <Card title="Tools" icon="wrench" href="/tools/overview">
+    Understand how p0 interacts with your codebase
+  </Card>
+</CardGroup>

@@ -1,0 +1,100 @@
+---
+title: "Phase 5: Post-PR"
+description: "Handle review feedback and make follow-up changes"
+---
+
+After the PR is created, use p0 to address review comments and make follow-up changes. The session remains active, allowing you to iterate on the implementation until the PR is approved.
+
+## Handling review feedback
+
+When you receive review comments:
+
+1. Paste the comments into p0
+2. p0 analyzes the feedback and suggests fixes
+3. Review the suggested changes
+4. Approve or modify the approach
+5. p0 implements the changes
+
+p0 understands common review patterns:
+
+- Code style and convention requests
+- Performance improvements
+- Security concerns
+- Test coverage gaps
+- Documentation updates
+
+<Frame>
+  <img src="/images/screenshots/post-pr-feedback.png" alt="Handling PR review feedback" />
+</Frame>
+
+{/* TODO: Screenshot - capture addressing review comments with p0 showing suggested fixes */}
+
+## Follow-up changes
+
+You can make additional changes in the same session:
+
+- Add missing tests
+- Improve error handling
+- Refactor based on feedback
+- Update documentation
+- Fix edge cases
+
+Each iteration pushes new commits to the same PR branch.
+
+<Tip>
+  Use `/pr-comments` to generate structured review comments for your own PRs when reviewing others' code.
+</Tip>
+
+## Closing the loop
+
+Once the PR is approved and merged:
+
+1. The feature is complete
+2. The session's worktree can be cleaned up
+3. Documentation is preserved in the feature folder
+
+The feature folder remains as a permanent record:
+
+```
+purple/documentation/{YYMMDD}-{slug}/
+  ├── product-spec.md
+  ├── tech-spec.md
+  ├── implementation-log.md
+  ├── progress.json
+  └── pr-link.txt
+```
+
+## Starting a new task
+
+After completing a feature, you can:
+
+- Start a new spec-driven workflow with `/build-from-spec`
+- Use `/refine` for incremental changes to existing features
+- Switch to chat mode for exploratory work
+
+<Note>
+  The spec-driven workflow is designed for substantial features. For small tweaks and bug fixes, regular chat mode may be more efficient.
+</Note>
+
+## Best practices
+
+To get the most out of the post-PR phase:
+
+- Address feedback promptly while context is fresh
+- Group related review comments for batch fixes
+- Test thoroughly after each iteration
+- Keep PR scope focused; create new PRs for scope expansion
+- Document any decisions made during review
+
+## Workflow complete
+
+Congratulations! You've completed the full spec-driven workflow. The feature has gone from idea to merged PR with full documentation at every step.
+
+<CardGroup cols={2}>
+  <Card title="Start a new feature" icon="plus" href="/workflow/overview">
+    Begin another spec-driven workflow
+  </Card>
+  <Card title="Explore tools" icon="wrench" href="/tools/overview">
+    Learn about p0's capabilities
+  </Card>
+</CardGroup>

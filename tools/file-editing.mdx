@@ -1,0 +1,58 @@
+---
+title: "File editing"
+description: "Create and modify files with syntax-highlighted diffs"
+---
+
+p0 can create new files and make precise edits to existing ones, showing every change as a syntax-highlighted diff so you can verify exactly what changed.
+
+## Edit tool
+
+The Edit tool makes targeted edits to existing files:
+
+- **Find and replace**: The AI specifies the exact text to find and what to replace it with
+- **Syntax-highlighted diff**: Changes are shown with Shiki syntax highlighting in the file's language
+- **Line counts**: The header displays +/- line counts (e.g., "+5 -2" means 5 lines added, 2 removed)
+- **Clickable filename**: Click the filename to open the full diff in the sidebar
+
+The Edit tool is precise — the AI must match the exact text to replace, ensuring edits happen exactly where intended.
+
+<Frame>
+  <img src="/images/screenshots/edit-tool-diff.png" alt="Edit tool showing syntax-highlighted diff" />
+</Frame>
+
+{/* TODO: Screenshot - capture edit tool with syntax-highlighted diff showing green additions and red removals */}
+
+## Write tool
+
+The Write tool creates new files or replaces entire file contents:
+
+- **New files**: Create files that don't exist yet
+- **Full replacements**: Replace the entire contents of an existing file
+- **Path display**: Shows the full file path and content preview
+
+Use Write for new files, Edit for targeted changes to existing files.
+
+## Diff preview
+
+Every edit shows a before/after diff:
+
+- **Green highlighting**: Added lines and characters
+- **Red highlighting**: Removed lines and characters
+- **Context lines**: Unchanged lines around the edit for context
+- **Inline changes**: Character-level diffs show exactly what changed within a line
+
+This visual feedback lets you verify changes before accepting them.
+
+## Notebook editing
+
+The NotebookEdit tool works with Jupyter notebooks:
+
+- **Cell-level edits**: Replace, insert, or delete individual cells
+- **Code and markdown**: Supports both code and markdown cells
+- **Cell IDs**: Target specific cells by their ID
+
+Notebooks are stored as JSON, but NotebookEdit abstracts away the complexity.
+
+<Tip>
+Click any filename in a tool call to see the full file diff in the sidebar. This is especially useful for understanding edits in context.
+</Tip>

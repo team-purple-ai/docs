@@ -1,0 +1,56 @@
+---
+title: "Sub-chats"
+description: "Run multiple conversation threads within a single session"
+---
+
+Sub-chats let you run multiple parallel conversations within the same p0 session. Each sub-chat is an independent thread with its own conversation history and context.
+
+## Creating a sub-chat
+
+To create a new sub-chat within your current session:
+
+1. Click the "New Sub-chat" button in the session interface
+2. A new conversation thread opens in a separate tab
+3. Start chatting with p0 in the new thread
+
+All sub-chats within a session share the same git worktree but maintain independent conversation histories.
+
+## Managing sub-chats
+
+Sub-chats appear as tabs in the session interface, making it easy to navigate between different conversations:
+
+- **Tab navigation** - Click tabs to switch between sub-chats
+- **Pinning** - Pin important sub-chats to keep them easily accessible
+- **Renaming** - Give sub-chats descriptive names to organize your work
+
+Each sub-chat maintains its own metadata including ID, name, creation timestamp, and mode.
+
+## Independent modes
+
+Each sub-chat can operate in its own mode independently:
+
+- Sub-chat A could be in **Plan mode** exploring a new feature
+- Sub-chat B could be in **Agent mode** implementing a bug fix
+- Sub-chat C could be in **Plan mode** analyzing architecture options
+
+The mode setting is stored per sub-chat and persists across sessions using localStorage.
+
+## Use cases
+
+Sub-chats are useful for:
+
+- **Exploring different approaches** - Try multiple solutions in parallel and compare results
+- **Separating concerns** - Have one sub-chat for frontend changes and another for backend
+- **Quick questions** - Ask questions without interrupting your main implementation thread
+- **Parallel tasks** - Work on multiple independent features simultaneously
+- **Documentation** - Keep a sub-chat for documentation updates separate from code changes
+
+<Frame>
+  <img src="/images/screenshots/sub-chats.png" alt="Multiple sub-chat tabs in a session" />
+</Frame>
+
+{/* TODO: Screenshot - Capture the sub-chat tab interface showing multiple tabs with different names, with one in Plan mode and another in Agent mode */}
+
+<Tip>
+Use sub-chats to keep your main conversation focused while exploring side questions or alternative approaches. You can always merge insights back into your primary thread.
+</Tip>

@@ -1,0 +1,61 @@
+---
+title: "Plan mode"
+description: "Analyze your codebase and create implementation plans before making changes"
+---
+
+Plan mode lets p0 analyze your code without modifying anything. It's great for understanding the scope and complexity of a task before committing to changes.
+
+## How it works
+
+When p0 is in Plan mode, it can read and analyze your codebase but cannot execute commands or modify files. The AI will:
+
+1. Explore your codebase using read-only tools
+2. Analyze the requirements and current implementation
+3. Create a detailed plan outlining the steps needed
+4. Present the plan for your review and approval
+
+This read-only analysis gives you a clear roadmap before any changes are made to your code.
+
+## Available tools
+
+In Plan mode, p0 has access to these read-only tools:
+
+- **Read** - View file contents
+- **Grep** - Search for patterns in files
+- **Glob** - Find files by name patterns
+- **WebSearch** - Search the web for information
+- **WebFetch** - Fetch content from URLs
+- **Task** - Break down complex analysis tasks
+- **Thinking** - Internal reasoning about the problem
+
+These tools allow comprehensive code analysis without the ability to modify anything.
+
+## When to use Plan mode
+
+Plan mode is ideal for:
+
+- **Complex tasks** - Understanding multi-step changes before execution
+- **Unfamiliar codebases** - Exploring architecture and patterns first
+- **Multi-file changes** - Mapping out dependencies and impact
+- **Architecture decisions** - Evaluating different approaches before implementing
+
+Starting in Plan mode helps you avoid surprises and ensures the AI understands your requirements correctly.
+
+## Switching to Agent mode
+
+After reviewing the plan, you have two options:
+
+1. **Approve the plan** - p0 will automatically switch to Agent mode and send an "Implement plan" message to execute the proposed changes
+2. **Use the /agent command** - Manually switch to Agent mode at any time
+
+Once in Agent mode, p0 can execute the plan by running commands and modifying files.
+
+<Frame>
+  <img src="/images/screenshots/plan-mode.png" alt="Plan mode creating an implementation plan" />
+</Frame>
+
+{/* TODO: Screenshot - Capture plan mode showing the AI analyzing code and presenting a multi-step plan with numbered steps and file references */}
+
+<Tip>
+Start every new task in Plan mode to get a roadmap before making changes. You can set Plan mode as your default for new sessions.
+</Tip>

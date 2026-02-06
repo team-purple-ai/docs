@@ -1,68 +1,107 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "p0 Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#7C3AED",
+    "light": "#A78BFA",
+    "dark": "#5B21B6"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
             "group": "Getting started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "getting-started/installation",
+              "getting-started/quickstart",
+              "getting-started/core-concepts"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Workspaces",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "workspaces/overview",
+              "workspaces/multi-repo",
+              "workspaces/settings"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Sessions & modes",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "sessions/plan-mode",
+              "sessions/agent-mode",
+              "sessions/sub-chats",
+              "sessions/git-worktree-isolation"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Spec-driven workflow",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "workflow/overview",
+              "workflow/product-spec",
+              "workflow/tech-spec",
+              "workflow/implementation",
+              "workflow/pull-request",
+              "workflow/post-pr"
+            ]
+          },
+          {
+            "group": "Tools & execution",
+            "pages": [
+              "tools/overview",
+              "tools/bash-terminal",
+              "tools/file-editing",
+              "tools/diff-viewer",
+              "tools/web-search"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "features/embedded-terminal",
+              "features/keyboard-shortcuts",
+              "features/themes",
+              "features/coding-standards",
+              "features/plugins",
+              "features/slash-commands"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Reference",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Configuration",
             "pages": [
-              "api-reference/introduction"
+              "reference/settings",
+              "reference/environment-variables"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Keyboard shortcuts",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "reference/all-shortcuts"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "reference/troubleshooting",
+              "reference/faq"
+            ]
+          },
+          {
+            "group": "About",
+            "pages": [
+              "reference/system-requirements",
+              "reference/security-and-privacy",
+              "reference/changelog"
             ]
           }
         ]
@@ -71,14 +110,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Website",
+          "href": "https://bepurple.ai",
+          "icon": "globe"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Community",
+          "href": "https://bepurple.ai/slack",
+          "icon": "slack"
         }
       ]
     }
@@ -91,32 +130,20 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@bepurple.ai"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Download p0",
+      "href": "https://bepurple.ai/download"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/bepurpleai",
+      "github": "https://github.com/bepurple",
+      "linkedin": "https://linkedin.com/company/bepurple"
     }
   }
 }

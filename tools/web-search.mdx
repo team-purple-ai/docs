@@ -1,0 +1,72 @@
+---
+title: "Web search"
+description: "AI-powered web search for documentation, APIs, and solutions"
+---
+
+p0 can search the web when it needs external context — documentation, API references, error solutions, or information beyond its training data.
+
+## How it works
+
+The AI has two web tools:
+
+### WebSearch
+
+Returns a list of search results with titles and URLs:
+
+- The AI constructs a search query based on what it needs
+- Returns up to 10 results with titles, URLs, and snippets
+- The AI can choose which results to fetch for detailed content
+
+### WebFetch
+
+Retrieves full page content from specific URLs:
+
+- Fetches the complete content of a web page
+- Returns hostname, byte size, and HTTP status
+- Content is converted to markdown for easier processing
+
+The AI decides when to search and which results to fetch based on the task.
+
+## Result display
+
+Search results appear as an expandable list:
+
+- **Expandable results**: Click to expand and see all results
+- **Title and URL**: Each result shows the page title and URL
+- **Link icon**: Visual indicator that these are web resources
+- **Clickable URLs**: Click any URL to open it in your browser
+
+<Frame>
+  <img src="/images/screenshots/web-search.png" alt="Web search results showing expandable list" />
+</Frame>
+
+{/* TODO: Screenshot - capture web search tool with expandable result list showing titles, URLs, and link icons */}
+
+## When AI searches
+
+The AI typically performs web searches for:
+
+- **Unfamiliar APIs**: Looking up API documentation for libraries it hasn't seen before
+- **Error messages**: Finding solutions to cryptic error messages or stack traces
+- **Library documentation**: Checking the latest syntax or usage patterns for a framework
+- **Explicit requests**: When you ask it to search for something specific
+
+The AI uses its judgment about when external information would be helpful.
+
+<Note>
+The AI is trained on data up to a certain cutoff date. Web search allows it to access current documentation, recent changes, and real-time information.
+</Note>
+
+## Privacy
+
+Web searches are performed through Purple's API with privacy protections:
+
+- **Search terms only**: Only the search query is sent, never your code
+- **No code context**: Your codebase content stays local and is not included in searches
+- **Secure fetching**: WebFetch retrieves pages over HTTPS
+
+For more details on how p0 protects your data, see the [Security and Privacy](/reference/security-and-privacy) documentation.
+
+<Tip>
+You can see exactly what the AI searched for in the tool call. This transparency helps you understand what external context it's using.
+</Tip>

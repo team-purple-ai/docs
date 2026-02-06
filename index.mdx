@@ -1,97 +1,62 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: Welcome to p0
+description: AI-powered coding, from idea to pull request
 ---
 
-## Setting up
+# Welcome to p0
 
-Get your documentation site up and running in minutes.
+**Build better software, faster.** p0 is Purple's AI-powered desktop coding assistant that takes you from idea to pull request with minimal friction.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+p0 uses Claude to understand your codebase, plan changes, and execute implementations across your entire workspace. Whether you're building new features, fixing bugs, or refactoring code, p0 works alongside you with full visibility into every action it takes.
 
-## Make it yours
+<Frame>
+  <img src="/images/screenshots/app-overview.png" alt="p0 desktop app interface" />
+</Frame>
 
-Design a docs site that looks great and empowers your users.
+{/* TODO: Screenshot - capture the main p0 interface showing a session in progress with tool visualization */}
 
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+## Core features
+
+<CardGroup cols={2}>
+  <Card title="Spec-driven workflow" icon="file-lines" href="/workflow/overview">
+    Five-phase pipeline from product spec to post-PR review, ensuring quality at every step
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
 
-## Create beautiful pages
-
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
+  <Card title="Plan & Agent modes" icon="brain" href="/sessions/plan-mode">
+    Start with read-only analysis, then switch to full execution when you're ready
   </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
 
-## Need inspiration?
+  <Card title="Git worktree isolation" icon="code-branch" href="/sessions/git-worktree-isolation">
+    Every session runs in its own worktree, keeping your main branch clean and safe
+  </Card>
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+  <Card title="Real-time tool execution" icon="terminal" href="/tools/overview">
+    Watch bash commands, file edits, diffs, and web searches as they happen
+  </Card>
+
+  <Card title="Multi-repo workspaces" icon="folder-tree" href="/workspaces/multi-repo">
+    Work across multiple repositories in one unified workspace
+  </Card>
+
+  <Card title="Plugins & extensibility" icon="puzzle-piece" href="/features/plugins">
+    Extend p0 with workspace-scoped plugins for custom workflows
+  </Card>
+</CardGroup>
+
+## Get started
+
+<Steps>
+  <Step title="Download p0">
+    Get the desktop app for macOS, Windows, or Linux from [bepurple.ai](https://bepurple.ai)
+  </Step>
+
+  <Step title="Create a workspace">
+    Connect your git repositories and configure your coding standards
+  </Step>
+
+  <Step title="Start coding">
+    Describe what you want to build and let p0 handle the implementation
+  </Step>
+</Steps>
+
+Ready to dive in? Start with the [installation guide](/getting-started/installation) or explore the [quickstart tutorial](/getting-started/quickstart).

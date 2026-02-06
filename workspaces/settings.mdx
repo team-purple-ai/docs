@@ -1,0 +1,221 @@
+---
+title: "Workspace settings"
+description: "Configure repositories, coding standards, and AI preferences for your workspace"
+---
+
+Workspace settings let you customize how p0 behaves for your project. Access settings at any time by clicking the gear icon in your workspace or pressing `Cmd+,` (Mac) or `Ctrl+,` (Windows/Linux).
+
+<Frame>
+  <img src="/images/screenshots/workspace-settings-overview.png" alt="Workspace settings panel" />
+</Frame>
+
+{/* TODO: Screenshot - capture full workspace settings panel showing navigation sidebar and main content area */}
+
+## Repositories
+
+The Repositories tab shows all connected repositories and lets you manage your workspace's codebase.
+
+### Repository list
+
+View all repositories connected to your workspace:
+
+- **Repository name** - GitHub repo name or local folder name
+- **Git remote** - The remote URL (GitHub, GitLab, Bitbucket, etc.)
+- **Current branch** - The branch currently checked out
+- **Status** - Indicates if there are uncommitted changes or sync issues
+
+<Frame>
+  <img src="/images/screenshots/settings-repositories.png" alt="Repositories tab in workspace settings" />
+</Frame>
+
+{/* TODO: Screenshot - capture Repositories tab showing list of connected repos with status indicators */}
+
+### Adding repositories
+
+To connect a new repository to your workspace:
+
+1. Click "Add Repository"
+2. Choose a method:
+   - **Browse GitHub** - Search and select repos from your organizations
+   - **Enter Git URL** - Paste any Git remote URL
+   - **Local folder** - Add an existing local repository
+3. p0 clones the repository into your workspace directory
+4. The repo is now available in all future sessions
+
+### Removing repositories
+
+To disconnect a repository:
+
+1. Click the overflow menu (three dots) next to the repo
+2. Select "Remove from workspace"
+3. Choose whether to delete the local copy or keep it
+
+<Warning>
+  Removing a repository from your workspace does not delete it from GitHub—it only disconnects it from this workspace. You can re-add it later.
+</Warning>
+
+## Coding standards
+
+Coding standards define how the AI writes code in your workspace. Standards are organized into categories and applied automatically during sessions.
+
+### Standard categories
+
+Your workspace can have standards in any of these categories:
+
+- **Global** - Applies to all code regardless of stack
+- **Frontend** - React, Vue, CSS, browser-specific patterns
+- **Backend** - API design, database access, server-side code
+- **Business** - Domain logic, business rules, workflows
+- **Mobile** - React Native, mobile-first patterns
+- **Data** - Data processing, analytics, ETL pipelines
+- **DevOps** - CI/CD, infrastructure, deployment
+- **Security** - Authentication, authorization, data protection
+
+<Frame>
+  <img src="/images/screenshots/settings-coding-standards.png" alt="Coding standards in workspace settings" />
+</Frame>
+
+{/* TODO: Screenshot - capture Coding Standards tab showing categories and standard rules */}
+
+### How standards are applied
+
+When you create a workspace from a template, standards are pre-configured based on your stack. For example, the "Full Stack" template includes:
+
+- Global standards for code quality and testing
+- Frontend standards for React and TypeScript
+- Backend standards for Node.js APIs
+- Security standards for authentication
+
+You can customize these standards or add your own team-specific rules.
+
+### Managing standards
+
+From the Coding Standards tab:
+
+- **View standards** - See all active standards by category
+- **Edit standards** - Modify existing rules
+- **Add custom standards** - Create team-specific patterns
+- **Sync with team** - Pull updated standards from your Purple team
+
+<Tip>
+  Standards are version-controlled and sync with your team. When your team updates shared standards, you'll see a notification to pull the latest version.
+</Tip>
+
+Learn more about creating and managing coding standards in the [Coding Standards documentation](/features/coding-standards).
+
+## Plugins
+
+Plugins extend p0's functionality with integrations, tools, and custom AI behaviors. The Plugins tab shows installed plugins and lets you enable or disable them per workspace.
+
+### Available plugins
+
+Browse and install plugins for your workspace:
+
+- **Database connectors** - PostgreSQL, MySQL, MongoDB access
+- **API tools** - REST client, GraphQL playground
+- **Deployment** - Vercel, Netlify, AWS deploy integrations
+- **Testing** - Playwright, Cypress, Jest utilities
+- **Code quality** - ESLint, Prettier, SonarQube
+
+<Frame>
+  <img src="/images/screenshots/settings-plugins.png" alt="Plugins tab showing installed and available plugins" />
+</Frame>
+
+{/* TODO: Screenshot - capture Plugins tab with grid of available plugins and enable/disable toggles */}
+
+### Installing plugins
+
+To add a plugin to your workspace:
+
+1. Navigate to the Plugins tab
+2. Click "Browse Plugins"
+3. Select the plugin you want to install
+4. Click "Install"
+5. Configure plugin settings if required
+6. Enable the plugin for your workspace
+
+### Managing plugins
+
+For each installed plugin, you can:
+
+- **Enable/Disable** - Toggle plugins on or off for this workspace
+- **Configure** - Set plugin-specific options and credentials
+- **Update** - Install the latest version when available
+- **Uninstall** - Remove the plugin from your workspace
+
+<Note>
+  Plugins are workspace-specific. Enabling a database plugin in one workspace doesn't automatically enable it in others.
+</Note>
+
+Learn more about plugins in the [Plugins documentation](/features/plugins).
+
+## Team sync
+
+Workspaces can sync with your Purple team to share settings, standards, and plugins across team members.
+
+### Sync status
+
+The workspace settings header shows your sync status:
+
+- **Synced** (green checkmark) - Workspace is up to date with team settings
+- **Pending** (yellow clock) - Changes are queued to sync
+- **Error** (red warning) - Sync failed, manual intervention needed
+
+<Frame>
+  <img src="/images/screenshots/settings-team-sync.png" alt="Team sync status in workspace settings" />
+</Frame>
+
+{/* TODO: Screenshot - capture sync status indicator in settings header with tooltip */}
+
+### What syncs with your team
+
+When your workspace is connected to a Purple team, the following sync automatically:
+
+- **Coding standards** - Shared team standards are pulled and merged
+- **Plugin recommendations** - Team-approved plugins appear in your plugin list
+- **Workspace templates** - Team-specific templates for workspace creation
+- **Configuration presets** - Shared AI preferences and settings
+
+### Manual sync
+
+To manually sync with your team:
+
+1. Open workspace settings
+2. Click the sync icon in the header
+3. Review incoming changes
+4. Accept or reject team updates
+5. Push your local changes to the team (if you have admin permissions)
+
+<Warning>
+  Sync conflicts can occur if you've customized standards that your team also updated. p0 will show a diff and let you choose which version to keep.
+</Warning>
+
+## Workspace metadata
+
+At the bottom of the settings panel, you'll find workspace metadata:
+
+- **Workspace ID** - Unique identifier for this workspace
+- **Remote ID** - Server-side ID if synced with Purple team
+- **Team ID** - The team this workspace belongs to
+- **Created date** - When the workspace was created
+- **Last modified** - Most recent settings change
+- **Storage path** - Local filesystem location (`~/.purple-code/workspaces/{name}/`)
+
+This information is useful for troubleshooting and support.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Coding standards" icon="book" href="/features/coding-standards">
+    Create custom standards for your team
+  </Card>
+  <Card title="Plugins" icon="puzzle-piece" href="/features/plugins">
+    Extend p0 with plugins
+  </Card>
+  <Card title="Multi-repo workspaces" icon="code-branch" href="/workspaces/multi-repo">
+    Work across multiple repositories
+  </Card>
+  <Card title="Team collaboration" icon="users" href="/teams/overview">
+    Share workspaces with your team
+  </Card>
+</CardGroup>

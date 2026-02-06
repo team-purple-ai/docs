@@ -1,0 +1,122 @@
+---
+title: "Coding standards"
+description: "Define per-workspace coding standards and sync them across your team"
+---
+
+Coding standards tell p0 how your team writes code — capturing your style guides, architectural patterns, and conventions. When configured, p0 uses these standards to write code that matches your team's practices and to review existing code for consistency.
+
+<Frame>
+  <img src="/images/screenshots/coding-standards.png" alt="Coding standards configuration interface" />
+</Frame>
+
+{/* TODO: Screenshot - capture the coding standards editor in workspace settings showing multiple categories */}
+
+## How standards work
+
+Standards are instructions for the AI that influence how p0:
+- Writes new code and features
+- Reviews and refactors existing code
+- Suggests improvements and best practices
+- Generates tests and documentation
+
+Standards are stored per workspace, so each project can have its own conventions. When you switch workspaces, p0 automatically applies the appropriate standards.
+
+## Standard categories
+
+p0 organizes coding standards into eight categories to provide targeted guidance:
+
+### Global
+Applies to all code across your project. Use this for universal conventions like:
+- Naming conventions (camelCase, PascalCase, snake_case)
+- File organization and structure
+- Error handling patterns
+- Logging and monitoring practices
+
+### Frontend
+UI and client-side patterns for web applications:
+- Component structure (React, Vue, Svelte, etc.)
+- State management patterns (Redux, Zustand, Pinia)
+- CSS methodologies (BEM, CSS Modules, Tailwind)
+- Accessibility requirements (ARIA, keyboard navigation)
+
+### Backend
+Server-side and API patterns:
+- API design (REST, GraphQL, gRPC)
+- Database interaction patterns (ORMs, query builders)
+- Authentication and authorization approaches
+- Middleware and request handling
+
+### Business
+Domain logic and business rules:
+- Domain model conventions
+- Business process workflows
+- Validation rules and constraints
+- Integration patterns with external systems
+
+### Mobile
+Mobile-specific patterns and conventions:
+- Platform-specific guidelines (iOS, Android, React Native)
+- Navigation patterns
+- Offline-first strategies
+- Performance optimization techniques
+
+### Data
+Data science and machine learning patterns:
+- Data pipeline conventions
+- Model training and evaluation practices
+- Feature engineering approaches
+- Notebook organization and documentation
+
+### DevOps
+Infrastructure and CI/CD patterns:
+- Deployment strategies
+- Container and orchestration conventions
+- Infrastructure as code patterns
+- Monitoring and observability practices
+
+### Security
+Security best practices:
+- Input validation and sanitization
+- Authentication and session management
+- Secrets management
+- Security testing requirements
+
+## Setting up standards
+
+There are several ways to establish coding standards in your workspace:
+
+### From templates
+When creating a workspace, select a template that includes pre-configured standards for common tech stacks (React, Next.js, Python/FastAPI, etc.).
+
+### Generate with AI
+Use the `/create-standards` command to have p0 analyze your existing codebase and generate standards based on observed patterns.
+
+### Manual configuration
+Navigate to workspace settings and edit standards directly. Each category has a rich text editor where you can write or paste your team's guidelines.
+
+### Import from documentation
+Copy and paste relevant sections from your team's existing style guides or documentation.
+
+## Team sync
+
+When you're part of a Purple team, coding standards automatically sync across your organization. This ensures:
+- All team members use consistent conventions
+- New team members get up to speed quickly
+- Standards updates propagate to everyone
+- Projects maintain consistency across different workspaces
+
+Standards sync happens in the background — no manual intervention required.
+
+<Tip>
+Use `/review-standards` to check existing code against your workspace standards. p0 will identify inconsistencies and suggest improvements to align with your conventions.
+</Tip>
+
+## Best practices
+
+For effective coding standards:
+
+- **Be specific** — Instead of "use good naming", specify "use camelCase for variables, PascalCase for classes"
+- **Provide examples** — Show code examples of correct and incorrect patterns
+- **Keep them current** — Update standards as your team's practices evolve
+- **Start small** — Begin with critical conventions and expand over time
+- **Make them discoverable** — Reference external documentation URLs for detailed guidelines

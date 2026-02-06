@@ -1,0 +1,169 @@
+---
+title: "Multi-repo workspaces"
+description: "Work across multiple repositories in a single workspace"
+---
+
+Modern software projects rarely live in a single repository. You might have a React frontend, a Node.js API, a Python analytics service, and shared component libraries—all working together as one product. p0's multi-repo workspaces let you work across all these repositories seamlessly, with the AI understanding context from your entire codebase.
+
+## Why multi-repo support matters
+
+Instead of juggling multiple terminal windows, VS Code workspaces, and context switching between repos, p0 treats your entire project as a unified workspace:
+
+- **Unified AI context** - Claude sees your full stack, not just one repo
+- **Cross-repo refactoring** - Update API contracts and frontend clients together
+- **Shared standards** - Apply consistent coding standards across all repositories
+- **Atomic sessions** - Work on features that span multiple repos in one session
+
+<Frame>
+  <img src="/images/screenshots/multi-repo-workspace.png" alt="Workspace with multiple repositories displayed" />
+</Frame>
+
+{/* TODO: Screenshot - capture workspace dashboard showing 3-4 different repos listed */}
+
+## Adding repositories
+
+You can add repositories to your workspace in two ways:
+
+### During workspace creation
+
+In the workspace creation wizard, the "Add repositories" step lets you browse and select GitHub repositories. You can:
+
+- Search your GitHub organizations
+- Select multiple repos at once
+- Preview repository details before adding
+
+<Frame>
+  <img src="/images/screenshots/adding-repos-wizard.png" alt="Adding repositories during workspace creation" />
+</Frame>
+
+{/* TODO: Screenshot - capture the repository selection step in wizard with multiple repos selected */}
+
+### From workspace settings
+
+To add repositories after workspace creation:
+
+1. Open workspace settings (gear icon or `Cmd+,`)
+2. Navigate to the "Repositories" tab
+3. Click "Add Repository"
+4. Select repos from GitHub or paste a Git URL
+5. p0 clones the repo into your workspace
+
+<Frame>
+  <img src="/images/screenshots/adding-repos-settings.png" alt="Adding repositories from workspace settings" />
+</Frame>
+
+{/* TODO: Screenshot - capture workspace settings > Repositories tab with "Add Repository" dialog open */}
+
+## Cross-repo context
+
+When you start a session in a multi-repo workspace, Claude has access to all repositories. This enables powerful cross-repo operations:
+
+**Example: API contract changes**
+
+You ask Claude to add a new field to a user endpoint. Claude:
+1. Updates the API schema in `backend-api/src/models/user.ts`
+2. Modifies the API route handler
+3. Updates the TypeScript types in `frontend/src/types/api.ts`
+4. Adjusts UI components that display user data
+
+All in one session, across two repositories.
+
+**Example: Shared component updates**
+
+You refactor a button component in your design system repo. Claude:
+1. Updates the component in `design-system/src/Button.tsx`
+2. Identifies all usages in `web-app/` and `admin-portal/` repos
+3. Updates import paths and prop usages across both consuming apps
+4. Updates documentation in the design system
+
+<Tip>
+  The AI doesn't need special instructions to work across repos—it automatically understands the relationships between your repositories based on imports, API calls, and shared code.
+</Tip>
+
+## Worktree mappings
+
+When you start a session, p0 creates a worktree for each repository in your workspace. This allows you to work on feature branches without affecting your main working directories.
+
+### Worktree structure
+
+Each session gets its own worktree directory:
+
+```
+~/.purple-code/worktrees/{workspace-name}-wt-{session-id}/
+├── frontend-app/           (git worktree on feature branch)
+├── backend-api/            (git worktree on feature branch)
+├── shared-components/      (git worktree on feature branch)
+├── purple/                 (symlinked from workspace)
+├── .claude/                (symlinked from workspace)
+└── .workspace-root         (marker file)
+```
+
+### How worktrees work
+
+- **Isolated branches** - Each repository gets its own feature branch for the session
+- **Independent commits** - Changes to each repo are committed separately
+- **Shared workspace config** - The `purple/` and `.claude/` directories are symlinked, so standards and session context are shared
+- **Auto-cleanup** - Worktrees are cleaned up when sessions end (branches can be preserved or deleted)
+
+<Frame>
+  <img src="/images/screenshots/worktree-structure.png" alt="File explorer showing worktree directory structure" />
+</Frame>
+
+{/* TODO: Screenshot - capture file explorer showing a worktree directory with multiple repo folders */}
+
+<Note>
+  Each repository in the workspace gets its own git worktree branch. This means you can have `feature/add-auth` in your frontend repo and `feature/add-auth` in your backend repo—both managed in the same p0 session.
+</Note>
+
+## Repository management
+
+From workspace settings, you can:
+
+- **View all repos** - See connected repositories, their remotes, and current branches
+- **Add repos** - Connect new repositories to the workspace
+- **Remove repos** - Disconnect repos (workspace copy is preserved)
+- **Update remotes** - Change Git URLs if repos are moved
+- **Sync status** - See which repos have pending changes or sync issues
+
+<Frame>
+  <img src="/images/screenshots/repo-management.png" alt="Repository management in workspace settings" />
+</Frame>
+
+{/* TODO: Screenshot - capture workspace settings Repositories tab showing list of repos with status indicators */}
+
+## Best practices
+
+<AccordionGroup>
+  <Accordion title="Keep related repos together">
+    Group repositories that share code, APIs, or deployment cycles in the same workspace. Separate unrelated projects into different workspaces.
+  </Accordion>
+
+  <Accordion title="Use consistent branch naming">
+    Use the same feature branch name across repos when working on multi-repo features. This makes it easier to track related changes.
+  </Accordion>
+
+  <Accordion title="Apply shared standards">
+    Use workspace coding standards to ensure consistency across all repositories. Set standards for API contracts, error handling, and shared patterns.
+  </Accordion>
+
+  <Accordion title="Leverage session isolation">
+    Work on different features in separate sessions, even within the same workspace. Each session creates isolated worktrees.
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Workspace settings" icon="gear" href="/workspaces/settings">
+    Configure repos and standards
+  </Card>
+  <Card title="Coding standards" icon="book" href="/features/coding-standards">
+    Apply consistent patterns across repos
+  </Card>
+  <Card title="Sessions" icon="code" href="/sessions/overview">
+    Learn about AI coding sessions
+  </Card>
+  <Card title="Git workflow" icon="code-branch" href="/features/git-workflow">
+    Manage branches and commits
+  </Card>
+</CardGroup>

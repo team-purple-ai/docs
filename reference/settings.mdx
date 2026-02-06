@@ -1,0 +1,62 @@
+---
+title: "Settings reference"
+description: "Complete reference for all p0 settings and preferences"
+---
+
+Access settings by pressing `Cmd+,` (macOS) or `Ctrl+,` (Windows/Linux), or click the gear icon in the sidebar.
+
+## Account
+
+Manage your Purple account and profile:
+
+- **Profile name**: Display name shown in the app
+- **Email**: Your account email (read-only)
+- **Profile picture**: Upload a custom avatar
+- **Sign out**: Sign out of your Purple account
+
+## Model
+
+Select which Claude model to use for AI coding:
+
+- **Opus 4.5**: Most capable model, best for complex tasks
+- **Sonnet 4.5**: Balanced performance and speed (default)
+
+## Appearance
+
+Customize the interface appearance:
+
+- **Interface theme**: Choose System, Light, or Dark mode
+- **Light mode theme**: Select theme for light mode
+- **Dark mode theme**: Select theme for dark mode
+- **VS Code code themes**: Separate syntax highlighting themes for light and dark modes (defaults: github-light / github-dark)
+
+## Preferences
+
+Global preferences for p0 behavior:
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| Extended thinking | Enable deeper reasoning (128K tokens). Disables response streaming. | Off |
+| Sound notifications | Play sound when agent completes work (if not viewing the chat) | On |
+| Analytics opt-out | Opt out of analytics tracking | Off |
+| Ctrl+Tab target | Switch between workspaces (default) or agents with Ctrl+Tab | Workspaces |
+
+## Plugins
+
+Browse and manage workspace plugins. Plugins extend p0's functionality with additional tools and integrations.
+
+See [Plugins](/features/plugins) for more details.
+
+## MCP Servers
+
+View connected Model Context Protocol servers, their status, and available tools. MCP servers provide additional capabilities to Claude through standardized tooling.
+
+## Custom Agents (Beta)
+
+View and manage custom sub-agents. Custom agents are loaded from `~/.claude/agents/` and `.claude/agents/` directories.
+
+<Frame>
+  <img src="/images/screenshots/settings.png" alt="Settings dialog" />
+</Frame>
+
+{/* TODO: Screenshot - capture settings dialog showing all tabs */}

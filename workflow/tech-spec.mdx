@@ -1,0 +1,87 @@
+---
+title: "Phase 2: Tech spec"
+description: "Plan the architecture, file changes, and dependencies before writing code"
+---
+
+The tech spec translates product requirements into an engineering plan. It breaks down the feature into concrete file changes, identifies dependencies, and outlines the implementation approach.
+
+## What's in a tech spec
+
+A comprehensive tech spec includes:
+
+### Architecture decisions
+
+- Component structure and relationships
+- Data flow and state management
+- API design and integration points
+- Database schema changes
+
+### File-by-file change plan
+
+A detailed breakdown of which files need to be created, modified, or deleted, including:
+
+- New files to create
+- Existing files to modify
+- Functions and components to add or change
+- Tests to write
+
+### Dependencies
+
+- New packages to install
+- Version requirements
+- Potential conflicts
+
+### Risk assessment
+
+- Technical challenges
+- Areas requiring careful review
+- Performance considerations
+- Security implications
+
+<Frame>
+  <img src="/images/screenshots/tech-spec-review.png" alt="Tech spec review interface" />
+</Frame>
+
+{/* TODO: Screenshot - capture a tech spec with file-by-file breakdown and architecture notes */}
+
+## Generating the tech spec
+
+Use `/engineer-tasks` to generate a tech spec from your product spec, or let the full pipeline generate it automatically.
+
+p0 analyzes your codebase to:
+
+- Identify existing patterns to follow
+- Find similar implementations for reference
+- Detect potential conflicts
+- Suggest appropriate file locations
+
+## Reviewing and editing
+
+The tech spec is your last checkpoint before code changes begin. Review it carefully to ensure:
+
+- The approach aligns with your codebase conventions
+- All requirements from the product spec are addressed
+- Dependencies are appropriate
+- The scope is manageable
+
+You can request changes, add details, or approve to proceed to implementation.
+
+<Note>
+  The tech spec is your last checkpoint before code changes begin. Take time to review the implementation plan carefully.
+</Note>
+
+## Implementation approach
+
+The tech spec can outline different implementation strategies:
+
+- **Sequential**: One file at a time, in dependency order
+- **Parallel**: Multiple files simultaneously (via `/orchestrate`)
+- **Incremental**: Build in testable stages
+
+## Next steps
+
+Once the tech spec is approved, p0 moves to Phase 3: Implementation.
+
+<Card title="Phase 3: Implementation" icon="arrow-right" href="/workflow/implementation">
+  Watch AI write the code
+</Card>

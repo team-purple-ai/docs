@@ -1,0 +1,54 @@
+---
+title: "Embedded terminal"
+description: "A full-featured terminal built into p0 with tabs, search, and theme integration"
+---
+
+p0 includes a built-in terminal powered by xterm.js v5.3.0, so you can run commands without leaving the app. Whether you're running build scripts, git commands, or shell utilities, the integrated terminal keeps your workflow seamless.
+
+<Frame>
+  <img src="/images/screenshots/terminal-tabs.png" alt="p0 terminal with multiple tabs" />
+</Frame>
+
+{/* TODO: Screenshot - capture terminal with 2-3 tabs open showing different shell sessions */}
+
+## Terminal features
+
+The embedded terminal provides a complete terminal experience with modern enhancements:
+
+- **Multiple terminal tabs** — Open several terminal sessions simultaneously and switch between them instantly
+- **Full color support** — 256 color and truecolor support for rich shell themes and output
+- **Clickable file paths and URLs** — Click file paths to open them in the editor, or URLs to open them in your browser
+- **Built-in search** — Find text in terminal output quickly with the search addon
+- **10,000 line scrollback buffer** — Scroll back through extensive command history and output
+
+The terminal runs at 13pt Geist Mono (or MesloLGM Nerd Font as fallback) with 1.4 line height and a blinking cursor for optimal readability.
+
+## Shell configuration
+
+p0's terminal uses your system's default shell (zsh, bash, fish, etc.) and respects your shell configuration files like `.zshrc` or `.bashrc`.
+
+The terminal environment includes:
+- `TERM_PROGRAM="1Code"` for compatibility detection
+- `TERM="xterm-256color"` for full color support
+- Filtered environment variables for security
+- Full support for Nerd Fonts, enabling popular shell themes like oh-my-zsh, starship, and powerlevel10k
+
+Your custom shell prompt, aliases, and functions work exactly as they do in your system terminal.
+
+## Theme integration
+
+Terminal colors automatically sync with your selected app theme. When you switch from Purple Deep to GitHub Light, the terminal background, foreground, and ANSI colors update to match.
+
+This ensures a consistent visual experience across the entire application and makes it easy to read terminal output in any lighting condition.
+
+## Keyboard shortcuts
+
+Common terminal shortcuts work as expected:
+
+- **Ctrl+C** — Interrupt running command
+- **Ctrl+D** — Send EOF / exit shell
+- **Ctrl+L** — Clear screen
+- **Cmd+F** (macOS) / **Ctrl+Shift+F** (Windows/Linux) — Search terminal output
+- **Cmd+K** — Clear terminal buffer
+
+For a complete list of p0 keyboard shortcuts, see the [all shortcuts reference](/reference/all-shortcuts).

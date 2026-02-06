@@ -1,0 +1,128 @@
+---
+title: "Plugins"
+description: "Extend p0's capabilities with workspace-scoped plugins"
+---
+
+Plugins add custom agents, commands, and tools to your p0 workspace. They enable you to extend p0's functionality with specialized capabilities tailored to your workflow, tech stack, or team practices.
+
+<Frame>
+  <img src="/images/screenshots/plugin-browser.png" alt="p0 plugin browser showing available plugins" />
+</Frame>
+
+{/* TODO: Screenshot - capture the plugin browser in Settings > Plugins showing the plugin gallery */}
+
+## Plugin types
+
+p0 supports two plugin distribution methods:
+
+### Tarball plugins
+Downloadable packages distributed as `.tar.gz` files. These are versioned, immutable packages that can be downloaded and installed directly from Purple's plugin registry or custom sources.
+
+**Advantages:**
+- Versioned and reproducible
+- Offline installation possible
+- Fast installation (no git clone required)
+
+### Repository plugins
+Git-based plugins installed directly from a repository URL. These are ideal for development, private plugins, or team-specific extensions.
+
+**Advantages:**
+- Easy to develop and iterate
+- Can be private repositories
+- Simple updates (git pull)
+
+## Installing plugins
+
+### During workspace creation
+When creating a new workspace, p0 shows available plugins relevant to your selected template. Check the boxes for plugins you want to include.
+
+### From Settings
+1. Open Settings with `Cmd+,` (macOS) or `Ctrl+,` (Windows/Linux)
+2. Navigate to **Plugins**
+3. Browse the plugin gallery
+4. Click **Install** on any plugin you want to add
+
+Installation happens automatically — p0 downloads the plugin, validates its manifest, and registers it in your workspace.
+
+## Plugin structure
+
+When you install a plugin, p0 adds files to your workspace's `.claude` directory:
+
+```
+.claude/
+├── agents/           # Custom agent definitions
+│   └── my-agent.json
+├── commands/         # Custom slash commands
+│   └── my-command.js
+└── plugins/
+    └── {plugin-id}/
+        └── manifest.json  # Plugin metadata and dependencies
+```
+
+**Agents** add new AI personas with specialized prompts and capabilities. They appear in the agent selector and can be invoked via commands.
+
+**Commands** add new slash commands that appear in the `/` autocomplete. They can trigger workflows, run scripts, or invoke agents.
+
+**Manifest** describes the plugin's metadata, dependencies, and required permissions. p0 validates the manifest before installation.
+
+The plugin structure is synced with your workspace's `purple.json` file, which tracks all installed plugins and their configuration.
+
+## Managing plugins
+
+### Enable/disable
+Toggle plugins on or off without uninstalling. Disabled plugins remain in your workspace but don't load their agents or commands.
+
+1. Go to Settings > Plugins
+2. Find the plugin in your installed list
+3. Toggle the enable/disable switch
+
+### Uninstall
+Remove a plugin and all its files from your workspace:
+
+1. Go to Settings > Plugins
+2. Find the plugin in your installed list
+3. Click **Uninstall**
+4. Confirm the action
+
+This removes all agent definitions, commands, and the plugin directory from `.claude/`.
+
+### Reinstall for updates
+To update a plugin to its latest version:
+
+1. Uninstall the current version
+2. Install it again from the plugin browser
+
+p0 will fetch the latest version. Note: this only applies to tarball plugins. Repository plugins can be updated with `git pull` in the plugin directory.
+
+### Per-workspace enablement
+Plugins are workspace-scoped. Installing a plugin in one workspace doesn't affect other workspaces. This allows different projects to have different tooling without conflicts.
+
+## Plugin discovery
+
+Browse available plugins from Purple's plugin registry in the plugin browser. Plugins are categorized by:
+
+- **Development tools** — Formatters, linters, testing utilities
+- **Frameworks** — Framework-specific agents and commands
+- **Workflows** — Automation and process helpers
+- **Integrations** — Connections to external services and APIs
+- **Team plugins** — Custom plugins shared by your organization
+
+The plugin browser shows:
+- Plugin name and description
+- Version and author
+- Installation count and ratings
+- Required dependencies
+- Permissions needed
+
+<Tip>
+Plugin permissions are managed through p0's permission system. When a plugin requests file access, network access, or other capabilities, you'll be prompted to approve the permissions.
+</Tip>
+
+## Creating plugins
+
+To create your own plugin, see the [plugin development guide](/developers/creating-plugins). The plugin SDK provides TypeScript types, CLI tools, and templates to get started quickly.
+
+Custom plugins can be:
+- Installed from a git repository URL
+- Shared with your team
+- Published to the Purple plugin registry

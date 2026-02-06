@@ -1,0 +1,107 @@
+---
+title: Quickstart
+description: Go from zero to your first AI-assisted code change in five minutes
+---
+
+# Quickstart
+
+This guide walks you through your first p0 session, from creating a workspace to reviewing your AI-generated changes. You'll be coding with Claude in minutes.
+
+## Your first session
+
+<Steps>
+  <Step title="Sign in to p0">
+    Open the p0 desktop app and enter your Purple account credentials (email and password). If you don't have an account, sign up at [bepurple.ai](https://bepurple.ai).
+
+    <Frame>
+      <img src="/images/screenshots/workspace-creation.png" alt="Workspace creation wizard" />
+    </Frame>
+
+    {/* TODO: Screenshot - capture the workspace creation wizard showing template selection */}
+  </Step>
+
+  <Step title="Create a workspace">
+    Click **New workspace** to launch the workspace creation wizard.
+
+    - Choose a workspace template or start from scratch
+    - Give your workspace a name (e.g., "My Project")
+    - Add one or more git repositories from your local machine
+    - Configure coding standards and preferences (optional)
+
+    p0 will analyze your repositories and set up the workspace structure.
+  </Step>
+
+  <Step title="Start in Plan mode">
+    Once your workspace is ready, describe what you want to build in the chat interface. For example:
+
+    > "Add a new user authentication endpoint with JWT tokens"
+
+    p0 starts in **Plan mode** by default, which means it will:
+    - Analyze your codebase to understand existing patterns
+    - Research relevant files and dependencies
+    - Create a detailed plan without making any changes
+
+    <Frame>
+      <img src="/images/screenshots/plan-mode-interface.png" alt="Plan mode showing analysis and plan" />
+    </Frame>
+
+    {/* TODO: Screenshot - capture Plan mode showing the chat with analysis results and generated plan */}
+
+    Review the plan carefully. You'll see which files will be modified, what commands will run, and the overall approach.
+  </Step>
+
+  <Step title="Switch to Agent mode">
+    If the plan looks good, switch to **Agent mode** to let p0 implement the changes:
+
+    - Click the **Switch to Agent mode** button in the session header
+    - p0 will execute the plan using real tools: bash commands, file edits, web searches
+    - Watch in real-time as each tool runs and see the output immediately
+
+    You can pause, provide feedback, or adjust the approach at any time during execution.
+  </Step>
+
+  <Step title="Review and create a PR">
+    Once implementation is complete, review the session diff to see all changes:
+
+    - Check modified files in the diff viewer
+    - Run tests to verify the implementation
+    - When satisfied, click **Create PR** to push your changes
+
+    p0 runs in its own git worktree, so your main branch stays clean throughout the process.
+  </Step>
+</Steps>
+
+<Tip>
+  **Pro tip**: Always start with Plan mode to understand what changes p0 will make before committing to them. You can iterate on the plan by asking follow-up questions or requesting adjustments.
+</Tip>
+
+## What you just learned
+
+In this quickstart, you:
+
+- Created a workspace and connected your repositories
+- Used Plan mode to analyze your codebase and generate a plan
+- Switched to Agent mode to execute changes with full visibility
+- Reviewed the diff and prepared to create a pull request
+
+This workflow works for any coding task: new features, bug fixes, refactoring, documentation, and more.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Core concepts" icon="book" href="/getting-started/core-concepts">
+    Understand workspaces, sessions, modes, and the spec-driven workflow
+  </Card>
+
+  <Card title="Workspace overview" icon="folder-tree" href="/workspaces/overview">
+    Learn how to configure and manage workspaces
+  </Card>
+
+  <Card title="Plan mode deep dive" icon="map" href="/sessions/plan-mode">
+    Master read-only analysis and planning
+  </Card>
+
+  <Card title="Agent mode deep dive" icon="robot" href="/sessions/agent-mode">
+    Explore full execution and tool usage
+  </Card>
+</CardGroup>

@@ -1,0 +1,114 @@
+---
+title: "Slash commands"
+description: "Quick actions you can trigger by typing / in the chat"
+---
+
+Type `/` in the chat input to see available commands. Slash commands provide shortcuts for common actions, letting you switch modes, review code, run workflows, and access utilities without leaving the conversation.
+
+<Frame>
+  <img src="/images/screenshots/slash-command-autocomplete.png" alt="Slash command autocomplete dropdown" />
+</Frame>
+
+{/* TODO: Screenshot - capture the slash command autocomplete dropdown showing various commands with descriptions */}
+
+## Session commands
+
+Control your current chat session and context:
+
+| Command | Description |
+|---------|-------------|
+| `/plan` | Switch to Plan mode for strategic thinking and high-level design |
+| `/agent` | Switch to Agent mode for autonomous task execution |
+| `/clear` | Start a new sub-chat while preserving conversation context |
+| `/compact` | Compact conversation context to reduce token usage |
+
+**Use cases:**
+- Use `/plan` when you need to think through architecture or design decisions before coding
+- Use `/agent` to let p0 work autonomously on implementing features
+- Use `/clear` to start fresh without losing important context from earlier in the session
+- Use `/compact` when approaching context limits to condense the conversation
+
+## Code review commands
+
+Analyze and audit your code:
+
+| Command | Description |
+|---------|-------------|
+| `/review` | Comprehensive code review with suggestions for improvements |
+| `/pr-comments` | Generate review comments for a pull request |
+| `/release-notes` | Generate release notes from recent commits and changes |
+| `/security-review` | Security-focused audit looking for vulnerabilities |
+
+**Use cases:**
+- Run `/review` before committing to catch issues early
+- Use `/pr-comments` to generate thorough PR feedback for team reviews
+- Generate `/release-notes` for changelog updates and user communication
+- Run `/security-review` before deploying to production
+
+## Workflow commands
+
+Execute Purple's multi-step development workflows:
+
+| Command | Description |
+|---------|-------------|
+| `/build-from-spec` | Full pipeline: import spec → engineer tasks → implement → test |
+| `/import-spec` | Import and parse a product specification document |
+| `/engineer-tasks` | Create detailed engineering plan from product spec |
+| `/orchestrate` | Parallel implementation of engineering tasks from spec |
+| `/refine` | Incremental changes and improvements to existing features |
+| `/create-standards` | Generate coding standards by analyzing your codebase |
+| `/review-standards` | Review code for compliance with workspace coding standards |
+
+**Use cases:**
+- Use `/build-from-spec` for complete feature development from product requirements
+- Use `/import-spec` when you have a product spec and want to start planning
+- Use `/engineer-tasks` to break down specs into actionable engineering tasks
+- Use `/orchestrate` to implement multiple tasks in parallel
+- Use `/refine` for iterative improvements to existing code
+- Use `/create-standards` to document your team's coding patterns
+- Use `/review-standards` to ensure code consistency
+
+## Utility commands
+
+Access configuration, diagnostics, and system information:
+
+| Command | Description |
+|---------|-------------|
+| `/help` | Show available commands and quick help |
+| `/model` | Switch between Claude models (Sonnet, Opus, Haiku) |
+| `/cost` | Show token usage and estimated costs for the session |
+| `/memory` | View and edit memory files for persistent context |
+| `/doctor` | Run diagnostics to check installation health |
+| `/mcp` | Manage Model Context Protocol (MCP) servers |
+| `/config` | View current workspace and app configuration |
+| `/permissions` | Manage tool permissions and security settings |
+| `/status` | Show current session status and active context |
+| `/vim` | Toggle vim keybindings in the chat input |
+
+**Use cases:**
+- Use `/model` to switch to Opus for complex tasks or Haiku for simple queries
+- Check `/cost` to monitor token usage and stay within budget
+- Use `/memory` to view what p0 has remembered across sessions
+- Run `/doctor` if you're experiencing issues
+- Use `/mcp` to add tools and integrations via MCP servers
+- Use `/permissions` to review what tools p0 can access
+- Use `/vim` if you prefer vim keybindings for text editing
+
+## Custom commands from plugins
+
+Installed plugins can add their own slash commands. These appear in the autocomplete dropdown with a plugin icon and are documented in the plugin's description.
+
+To see all available commands including those from plugins, type `/` in the chat input or use the `/help` command.
+
+<Tip>
+Type `/` in the chat input to see the autocomplete dropdown with all available commands, their descriptions, and keyboard shortcuts. Start typing to filter commands by name.
+</Tip>
+
+## Command shortcuts
+
+Many commands have keyboard shortcuts for faster access:
+
+- **Cmd+K** (macOS) / **Ctrl+K** (Windows/Linux) — Equivalent to `/clear`
+- **Cmd+Shift+P** (macOS) / **Ctrl+Shift+P** (Windows/Linux) — Command palette with all actions
+
+For the complete list of keyboard shortcuts, see [keyboard shortcuts](/features/keyboard-shortcuts).

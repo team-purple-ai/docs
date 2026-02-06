@@ -1,0 +1,105 @@
+---
+title: "Phase 4: Pull request"
+description: "Review your changes and create a pull request"
+---
+
+After implementation, review all changes in the session diff and create a pull request. p0 provides comprehensive diff viewing and generates PR descriptions based on your specs.
+
+## Reviewing the diff
+
+p0 shows a full diff of all changes made during implementation. You can view changes in multiple ways:
+
+- **Tree view**: See files organized by directory structure
+- **Grouped view**: See files grouped by change type (modified, created, deleted)
+- **Unified diff**: Traditional side-by-side comparison
+- **Split view**: Changes displayed in parallel panes
+
+The diff viewer highlights:
+
+- Lines added and removed
+- File creation and deletion
+- Moved or renamed files
+- Binary file changes
+
+<Frame>
+  <img src="/images/screenshots/pr-diff-review.png" alt="Pull request diff review interface" />
+</Frame>
+
+{/* TODO: Screenshot - capture the diff viewer showing multiple files with changes, tree view, and PR description being generated */}
+
+<Card title="Diff viewer" icon="code-compare" href="/tools/diff-viewer">
+  Learn more about diff viewing capabilities
+</Card>
+
+## PR description
+
+p0 generates a comprehensive PR description based on:
+
+- The product spec (what was built)
+- The tech spec (how it was built)
+- The actual changes made
+- Test results and verification
+
+The description typically includes:
+
+- Summary of changes
+- Key implementation details
+- Testing performed
+- Deployment notes or considerations
+
+You can edit the description before creating the PR.
+
+## Multi-repo PRs
+
+For multi-repo workspaces, p0 can create pull requests across multiple repositories:
+
+- Detects which repos have changes
+- Creates coordinated PRs
+- Links related PRs together
+- Ensures dependency order
+
+This is particularly useful for features that span frontend/backend or multiple services.
+
+## Pushing changes
+
+You have several options for getting your changes into version control:
+
+### Push from p0
+
+Let p0 push the changes directly to your remote repository. It will:
+
+- Create a feature branch
+- Commit all changes
+- Push to origin
+- Create the PR via GitHub CLI
+
+### Manual push
+
+If you prefer more control:
+
+1. Review the session diff
+2. Exit p0 and use your git workflow
+3. Commit and push manually
+4. Create PR through GitHub web UI
+
+<Note>
+  p0 uses worktrees to isolate session changes. Make sure you understand how the worktree maps to your main repository before pushing.
+</Note>
+
+## PR checklist
+
+Before creating the PR, verify:
+
+- All tests pass
+- Code follows project conventions
+- No unintended files included
+- Sensitive data not exposed
+- PR description is accurate
+
+## Next steps
+
+After the PR is created, move to Phase 5 to handle review feedback.
+
+<Card title="Phase 5: Post-PR" icon="arrow-right" href="/workflow/post-pr">
+  Handle review feedback and follow-up
+</Card>

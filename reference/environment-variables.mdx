@@ -1,0 +1,36 @@
+---
+title: "Environment variables"
+description: "Environment variables for configuring p0"
+---
+
+p0 uses environment variables for optional configuration. Most users don't need to set any of these variables.
+
+## API Configuration
+
+Configure API endpoints for p0:
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| MAIN_VITE_API_URL | Purple API base URL | https://api.bepurple.ai |
+| MAIN_VITE_UPDATE_URL | Auto-update server URL | (Purple default) |
+| VITE_FEEDBACK_URL | Feedback channel URL | (Purple default) |
+
+## Analytics and Error Tracking
+
+Configure analytics and error tracking services:
+
+| Variable | Description |
+|----------|-------------|
+| MAIN_VITE_SENTRY_DSN | Sentry error tracking DSN (main process) |
+| MAIN_VITE_POSTHOG_KEY | PostHog analytics key (main process) |
+| MAIN_VITE_POSTHOG_HOST | PostHog host URL (main process) |
+| VITE_POSTHOG_KEY | PostHog analytics key (renderer) |
+| VITE_POSTHOG_HOST | PostHog host URL (renderer) |
+
+## Apple Signing
+
+Additional environment variables are used for Apple code signing during the build process. These are only relevant for developers building p0 from source.
+
+<Note>
+These variables are primarily for development and self-hosted deployments. The default values work for most users.
+</Note>
